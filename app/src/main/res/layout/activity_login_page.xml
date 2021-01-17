@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login_page">
+
+    <ImageView
+        android:layout_width="208sp"
+        android:layout_height="208sp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="258dp"
+        android:layout_marginTop="-49dp"
+        android:layout_marginEnd="-44dp"
+        android:background="@drawable/app_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello There"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:textSize="38sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="209dp"
+        android:layout_marginStart="39dp"/>
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="301dp"
+        android:background="@drawable/input_fields"
+        android:fontFamily="@font/segoe_ui"
+        android:paddingStart="20dp"
+        android:hint="E-mail"
+        android:textColorHint="#888888"
+        android:textSize="20sp"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="325dp"
+        android:layout_height="45dp"
+        android:layout_marginLeft="44dp"
+        android:layout_marginTop="362dp"
+        android:background="@drawable/input_fields"
+        android:fontFamily="@font/segoe_ui"
+        android:paddingLeft="20dp"
+        android:hint="Password"
+        android:textColorHint="#888888"
+        android:textSize="20sp" />
+
+
+    <Button
+        android:id="@+id/login"
+        android:layout_width="162dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="439dp"
+        android:background="@drawable/round_btn"
+        android:fontFamily="@font/segoe_ui"
+        android:text="login"
+        android:textColor="@color/white"
+        android:textSize="25sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Need Help"
+        android:textColor="#CB4D2B"
+        android:fontFamily="@font/segoe_ui"
+        android:layout_marginTop="454dp"
+        android:layout_marginStart="272dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20sp"
+        android:layout_marginTop="770dp"
+        android:fontFamily="@font/segoe_ui"
+        android:text="You are not a member?"
+        android:textColor="#253A4B"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/registerbtn_loginpg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="230sp"
+        android:layout_marginTop="770dp"
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="register"
+        android:textColor="#CB4D2B"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/login_back"
+        android:layout_width="29.61dp"
+        android:layout_height="19.2dp"
+        android:background="@drawable/back_btn"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="20dp"/>
+
+</RelativeLayout>

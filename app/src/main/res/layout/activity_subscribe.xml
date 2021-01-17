@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".subscribe"
+    android:background="#253A4B">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#DEE1E4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/menu_btn"
+            android:onClick="menu_btn"/>
+
+        <ImageView
+            android:layout_width="148dp"
+            android:layout_height="148dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/app_logo"
+            android:layout_marginTop="-40dp"/>
+
+        <Button
+            android:id="@+id/home_logoutbtn"
+            android:layout_width="24.98dp"
+            android:layout_height="26.95dp"
+            android:background="@drawable/logout"
+            android:layout_marginTop="16.51dp"
+            android:layout_marginLeft="367.33dp"/>
+
+        <ImageView
+            android:layout_width="349dp"
+            android:layout_height="510dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="116dp"
+            android:background="@drawable/home_options"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PURCHASE"
+            android:layout_marginTop="138dp"
+            android:layout_marginLeft="57dp"
+            android:textColor="#293D4E"
+            android:textSize="40dp"
+            android:fontFamily="@font/segoe_ui_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="273dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginRight="57dp"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="PRO"
+            android:textColor="#CB4D2B"
+            android:textSize="40dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Android Autocoder Pro pack includes access to :"
+            android:layout_marginTop="209dp"
+            android:layout_marginLeft="56dp"
+            android:textSize="22dp"
+            android:textColor="#CB4D2B"
+            android:fontFamily="@font/segoe_ui_bold"/>
+        <TextView
+            android:id="@+id/first"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1. 100+ Fonts."
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="#253A4B"
+            android:layout_marginTop="299dp"
+            android:layout_marginLeft="64dp"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/second"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/first"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="2. 50+ Backgroung colors and Textures."
+            android:textColor="#253A4B"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/third"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/second"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="3. All types of input fields (eg. Password , mail , etc)."
+            android:textColor="#253A4B"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/fourth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/third"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="4. fully customizable Fields."
+            android:textColor="#253A4B"
+            android:textSize="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fourth"
+            android:layout_marginLeft="64dp"
+            android:layout_marginTop="0dp"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:text="5. Database ( free till 30 days)."
+            android:textColor="#253A4B"
+            android:textSize="20dp" />
+        <Button
+            android:id="@+id/btn_subscribe"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="530dp"
+            android:layout_marginLeft="81dp"
+            android:background="@drawable/round_btn"
+            android:text="INR 700/-"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="@color/white"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1 Year Plan"
+            android:layout_marginTop="506dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textSize="15dp"/>
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>

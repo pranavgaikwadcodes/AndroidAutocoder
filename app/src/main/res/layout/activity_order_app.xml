@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Order_app"
+    android:background="#253A4B"
+    android:id="@+id/order_layout">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#DEE1E4"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/menu_btn"
+            android:onClick="menu_btn"/>
+
+        <ImageView
+            android:layout_width="148dp"
+            android:layout_height="148dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/app_logo"
+            android:layout_marginTop="-40dp"/>
+
+        <Button
+            android:id="@+id/home_logoutbtn"
+            android:layout_width="24.98dp"
+            android:layout_height="26.95dp"
+            android:background="@drawable/logout"
+            android:layout_marginTop="16.51dp"
+            android:layout_marginLeft="367.33dp"/>
+
+        <ImageView
+            android:layout_width="349dp"
+            android:layout_height="600dp"
+            android:layout_marginLeft="32dp"
+            android:layout_marginTop="116dp"
+            android:background="@drawable/home_options"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order Your App"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textSize="40dp"
+            android:layout_marginTop="138dp"
+            android:layout_marginLeft="57dp"
+            android:textColor="#293D4E"/>
+
+        <TextView
+            android:layout_width="289dp"
+            android:layout_height="240dp"
+            android:text="You can order your app ! You just have to send us requirements of your app , our employees will have a meeting with you regarding requirements in details ."
+            android:textColor="#CB4D2B"
+            android:layout_marginTop="209dp"
+            android:layout_marginLeft="56dp"
+            android:textSize="22dp"
+            android:fontFamily="@font/segoe_ui_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="You can contact us at :"
+            android:textColor="#CB4D2B"
+            android:layout_marginTop="420dp"
+            android:layout_marginLeft="56dp"
+            android:textSize="22dp"
+            android:fontFamily="@font/segoe_ui_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mail :"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="#CB4D2B"
+            android:layout_marginTop="488dp"
+            android:layout_marginLeft="48dp"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tel :"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="#CB4D2B"
+            android:layout_marginTop="528dp"
+            android:layout_marginLeft="48dp"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Office address :"
+            android:fontFamily="@font/segoe_ui"
+            android:textColor="#CB4D2B"
+            android:layout_marginTop="568dp"
+            android:layout_marginLeft="48dp"
+            android:textSize="22dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="order@androidautocoder.com"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="#54B3FF"
+            android:layout_marginTop="491dp"
+            android:layout_marginLeft="111dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+91 9898000098"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="#000000"
+            android:layout_marginTop="531dp"
+            android:layout_marginLeft="111dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MIT Polytechnic , Kothrud , Pune , Maharashtra"
+            android:fontFamily="@font/segoe_ui_bold"
+            android:textColor="#000000"
+            android:layout_marginTop="608dp"
+            android:layout_marginLeft="57dp"
+            android:textSize="18dp"/>
+
+
+    </RelativeLayout>
+
+    </ScrollView>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
+
+</androidx.drawerlayout.widget.DrawerLayout>
