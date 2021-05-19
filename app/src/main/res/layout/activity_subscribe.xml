@@ -140,7 +140,7 @@
                 android:autoSizeMinTextSize="20sp"
                 android:fontFamily="@font/segoe_ui_bold"
                 android:paddingBottom="20dp"
-                android:text="Android Autocoder Pro pack includes access to :"
+                android:text="Android Coder Pro pack includes access to :"
                 android:textColor="#CB4D2B"
                 android:textSize="22dp" />
 
