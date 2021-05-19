@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">AndroidAutocoder</string>
+    <string name="app_name">AndroidCoder</string>
     <string name="create_account">Create Account</string>
     <string name="already_a_member">Already a member?</string>
     <string name="password">Password</string>

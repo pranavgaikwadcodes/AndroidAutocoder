@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "269222152289",
+    "project_id": "androidcoder-486b3",
+    "storage_bucket": "androidcoder-486b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:269222152289:android:dfba65933942ce8c838220",
+        "android_client_info": {
+          "package_name": "com.example.androidautocoder"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "269222152289-5hu09d1a3a92ov0cosnv3q1fht59f0ne.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7BBn-s0_J276hesJAEn-4fI5hU9V7bIU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "269222152289-5hu09d1a3a92ov0cosnv3q1fht59f0ne.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

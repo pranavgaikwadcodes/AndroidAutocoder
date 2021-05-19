@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Splash_Screen"
-    android:background="@drawable/welcome_bg">
+    android:background="@drawable/welcome_bg"
+    tools:context=".Splash_Screen">
 
     <ImageView
         android:layout_width="438dp"
         android:layout_height="438dp"
-        android:background="@drawable/app_logo"
-        android:layout_marginTop="129dp"/>
+        android:layout_marginTop="129dp"
+        android:background="@drawable/app_logo" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:fontFamily="@font/segoe_ui_bold"
-        android:textSize="44sp"
-        android:textColor="@color/white"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="424dp"
-        android:layout_centerHorizontal="true"/>
+        android:fontFamily="@font/segoe_ui_bold"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="33sp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -32,22 +33,31 @@
         android:textColor="#80FFFFFF"
         android:textSize="15sp" />
 
-    <ProgressBar
-        android:id="@+id/pb"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="780dp"
-        android:progressTint="#CB4D2B" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Getting things ready !"
-        android:layout_marginTop="765dp"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/segoe_ui"
-        android:textColor="#CB4D2B"
-        android:textSize="15sp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/segoe_ui"
+            android:text="Getting things ready....."
+            android:textColor="#CB4D2B"
+            android:paddingLeft="20dp"
+            android:textSize="15sp" />
+
+        <ProgressBar
+            android:id="@+id/pb"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:progressTint="#CB4D2B" />
+
+
+    </LinearLayout>
 
 </RelativeLayout>

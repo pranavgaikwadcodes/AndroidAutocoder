@@ -12,102 +12,394 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select App Category"
+                android:textSize="25sp"
+                android:textColor="@color/white"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:layout_marginTop="83dp"
+                android:layout_centerHorizontal="true"/>
 
-        <ImageView
-            android:layout_width="349dp"
-            android:layout_height="164dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="116dp"
-            android:background="@drawable/home_options"
-            android:elevation="20dp"
-            android:outlineSpotShadowColor="@color/white" />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="140dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
 
-        <ImageView
-            android:layout_width="349dp"
-            android:layout_height="164dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="330dp"
-            android:background="@drawable/home_options"
-            android:elevation="20dp"
-            android:outlineSpotShadowColor="@color/white" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
-        <ImageView
-            android:layout_width="349dp"
-            android:layout_height="164dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="544dp"
-            android:background="@drawable/home_options"
-            android:elevation="20dp"
-            android:outlineSpotShadowColor="@color/white" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Education"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
 
-        <ImageView
-            android:layout_width="349dp"
-            android:layout_height="164dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginTop="758dp"
-            android:background="@drawable/home_options"
-            android:elevation="20dp"
-            android:outlineSpotShadowColor="@color/white" />
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
 
-    </RelativeLayout>
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_school"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="260dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Business"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_business"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="380dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Health"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_hospital"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="500dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Musicians"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_music"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="620dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Information"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_info"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="740dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Travel"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_airplane"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="#DEE1E4"
+                android:layout_marginTop="860dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="32dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:text="Workship"
+                        android:paddingVertical="10dp"
+                        android:textSize="32sp"
+                        android:fontFamily="@font/segoe_ui_bold"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <ImageView
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/ic_sunny"
+                            android:layout_alignParentRight="true"/>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1100dp"/>
+
+        </RelativeLayout>
 
     </ScrollView>
 
     <!--top bar (menu icon , logo , logout icon)-->
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="#DEE1E4" />
+            android:background="#C6C6C6" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="14dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/menu_btn"
-            android:onClick="menu_btn" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
 
-        <ImageView
-            android:layout_width="148dp"
-            android:layout_height="148dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="-40dp"
-            android:background="@drawable/app_logo" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
 
-        <Button
-            android:id="@+id/home_logoutbtn"
-            android:layout_width="24.98dp"
-            android:layout_height="26.95dp"
-            android:layout_marginLeft="367.33dp"
-            android:layout_marginTop="16.51dp"
-            android:background="@drawable/logout" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="14dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/menu_btn"
+                    android:onClick="menu_btn" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-60dp"
+                    android:background="@drawable/app_logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/nav_logoutbtn"
+                    android:layout_width="24.98dp"
+                    android:layout_height="26.95dp"
+                    android:layout_marginTop="16.51dp"
+                    android:background="@drawable/logout"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
     </RelativeLayout>
 
-    <RelativeLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="650dp"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingBottom="20dp">
 
         <Button
             android:id="@+id/btnNew"
-            android:layout_width="320dp"
+            android:layout_width="match_parent"
             android:layout_height="62dp"
             android:layout_marginLeft="47dp"
-            android:layout_marginTop="720dp"
+            android:layout_marginRight="47dp"
             android:background="@drawable/round_btn"
             android:fontFamily="@font/segoe_ui"
-            android:text="New +"
+            android:text="Customize App +"
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"

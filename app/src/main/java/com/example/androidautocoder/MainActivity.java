@@ -1,12 +1,13 @@
 package com.example.androidautocoder;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,10 +17,19 @@ public class MainActivity extends AppCompatActivity {
     TextView registerbtn;
     Button loginbtn;
 
+
+    SharedPreferences sharedPreferences;
+    private static final String SHARED_PREF_NAME = "userLoginSession";
+    private static final String _KEY_USERNAME = "username";
+    private static final String _KEY_EMAIL = "email";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        checkAlreadyLogin();
+
 //      hide bars
         decorView = getWindow().getDecorView();
         decorView.setOnSystemUiVisibilityChangeListener(new View.OnSystemUiVisibilityChangeListener() {
@@ -52,13 +62,17 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    private void checkAlreadyLogin() {
+        sharedPreferences = getSharedPreferences(SHARED_PREF_NAME,MODE_PRIVATE);
+        String name = sharedPreferences.getString(_KEY_USERNAME,null);
+        if (name != null){
+            Intent intent11 = new Intent(MainActivity.this,Home.class);
+            startActivity(intent11);
+        }
+    }
 
 
-
-
-
-
-//        hide bars
+    //        hide bars
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);

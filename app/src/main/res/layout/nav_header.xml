@@ -13,9 +13,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="95dp"
         android:fontFamily="@font/segoe_ui_bold"
-        android:text="AndroidAutocoder"
+        android:text="@string/app_name"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="25sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

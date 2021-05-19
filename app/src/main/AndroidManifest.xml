@@ -9,19 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAutocoder">
+        <activity android:name=".userProfile" android:windowSoftInputMode="adjustPan"></activity>
         <activity android:name=".Order_app" />
         <activity android:name=".subscribe" />
         <activity android:name=".Home" />
         <activity android:name=".Splash_Screen" />
-        <activity android:name=".Login_page" />
-        <activity android:name=".Register_page" />
+        <activity android:name=".Login_page" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".Register_page" android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".MainActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
 </manifest>

@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".userProfile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--top bar (menu icon , logo , logout icon)-->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="#C6C6C6" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="14dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/menu_btn"
+                            android:onClick="menu_btn" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="200dp"
+                            android:layout_height="200dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="-60dp"
+                            android:background="@drawable/app_logo" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="right"
+                        android:layout_weight="1">
+
+                        <Button
+                            android:id="@+id/home_logoutbtn"
+                            android:layout_width="24.98dp"
+                            android:layout_height="26.95dp"
+                            android:layout_marginTop="16.51dp"
+
+                            android:background="@drawable/logout" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="60dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:background="@drawable/userprofile" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="95dp"
+                        android:fontFamily="@font/segoe_ui_bold"
+                        android:text="Username"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:id="@+id/textUsername"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginTop="150dp"
+                        android:gravity="left">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="17dp"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Apps created : "
+                                android:textColor="#253A4B"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="0"
+                                android:textColor="#253A4B"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="17dp"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Pro Pack : no"
+                                android:textColor="#253A4B"
+                                android:textSize="20sp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:paddingLeft="20dp"
+                                android:fontFamily="@font/segoe_ui"
+                                android:text="Purchase now !"
+                                android:textColor="#008DFF"
+                                android:textSize="20sp" />
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+<!--user info fields-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="350dp"
+                android:gravity="center">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    android:textColorHint="@color/app2"
+                    app:startIconDrawable="@drawable/ic_mail"
+                    app:startIconTint="@color/app2"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:boxStrokeColor="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeErrorColor="@color/app2"
+                    android:id="@+id/userEmail">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="E-mail"
+                        android:inputType="textWebEmailAddress"
+                        android:textColorHint="#888888"
+                        android:textSize="20sp"
+                        android:textColor="@color/app2"
+                        android:textCursorDrawable="@null"
+                        android:text=""/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="11dp"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    android:textColorHint="@color/app2"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:startIconTint="@color/app2"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:boxStrokeColor="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeErrorColor="@color/app2"
+                    android:id="@+id/userUsername">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="Username"
+                        android:inputType="text"
+                        android:textColorHint="#888888"
+                        android:textSize="20sp"
+                        android:textColor="@color/app2"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="11dp"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    android:textColorHint="@color/app2"
+                    app:startIconDrawable="@drawable/ic_phone"
+                    app:startIconTint="@color/app2"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:boxStrokeColor="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeErrorColor="@color/app2"
+                    android:id="@+id/userContact">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="Contact"
+                        android:inputType="phone"
+                        android:textColorHint="#888888"
+                        android:textSize="20sp"
+                        android:textColor="@color/app2"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="11dp"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    android:textColorHint="@color/app2"
+                    app:startIconDrawable="@drawable/ic_password"
+                    app:startIconTint="@color/app2"
+                    app:endIconMode="password_toggle"
+                    app:endIconTint="@color/app2"
+                    app:boxStrokeColor="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeErrorColor="@color/app2"
+                    android:id="@+id/userPassword">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:textColorHint="#888888"
+                        android:textSize="20sp"
+                        android:textColor="@color/app2"
+                        android:textCursorDrawable="@null" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:layout_width="180dp"
+                    android:layout_height="60dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/upserprofile_btn"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="UPDATE"
+                    android:textSize="25sp" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</RelativeLayout>

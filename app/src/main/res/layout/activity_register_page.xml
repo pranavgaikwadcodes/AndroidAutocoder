@@ -4,121 +4,259 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF"
     tools:context=".Register_page">
 
-    <ImageView
-        android:layout_width="208sp"
-        android:layout_height="208sp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="258dp"
-        android:layout_marginTop="-49dp"
-        android:layout_marginEnd="-44dp"
-        android:background="@drawable/app_logo"
-        android:contentDescription="TODO" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Welcome to"
-        android:fontFamily="@font/segoe_ui"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="192dp"
-        android:layout_marginStart="39dp"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:fontFamily="@font/segoe_ui_bold"
-        android:textSize="38sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="209dp"
-        android:layout_marginStart="39dp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/new_email"
-        android:layout_width="325dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="301dp"
-        android:background="@drawable/input_fields"
-        android:fontFamily="@font/segoe_ui"
-        android:paddingStart="20dp"
-        android:hint="E-mail"
-        android:textColorHint="#888888"
-        android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/new_password"
-        android:layout_width="325dp"
-        android:layout_height="45dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="362dp"
-        android:background="@drawable/input_fields"
-        android:fontFamily="@font/segoe_ui"
-        android:paddingStart="20dp"
-        android:hint="@string/password"
-        android:textColorHint="#888888"
-        android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="15dp"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="Welcome to"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/new_cpassword"
-        android:layout_width="325dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="423dp"
-        android:background="@drawable/input_fields"
-        android:fontFamily="@font/segoe_ui"
-        android:paddingStart="20dp"
-        android:hint="Confirm Password"
-        android:textColorHint="#888888"
-        android:textSize="20sp"
-        android:autofillHints=""
-        android:inputType="TODO" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="39dp"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:maxLines="1"
+                    android:text="@string/app_name"
+                    android:textColor="@color/black"
+                    android:textSize="32sp" />
 
-    <Button
-        android:id="@+id/register_user"
-        android:layout_width="250dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="81dp"
-        android:layout_marginTop="497dp"
-        android:background="@drawable/round_btn"
-        android:fontFamily="@font/segoe_ui"
-        android:text="@string/create_account"
-        android:textColor="@color/white"
-        android:textSize="25sp" />
+                <Button
+                    android:id="@+id/register_user"
+                    android:layout_width="250dp"
+                    android:layout_height="53dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="456dp"
+                    android:background="@drawable/round_btn"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="@string/create_account"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:onClick="registerUser"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20sp"
-        android:layout_marginTop="770dp"
-        android:fontFamily="@font/segoe_ui"
-        android:text="@string/already_a_member"
-        android:textColor="#253A4B"
-        android:textSize="20sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/reg_back"
+                android:layout_width="29.61dp"
+                android:layout_height="19.2dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/back_btn" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="240dp"
+                android:layout_marginRight="30dp"
+                app:boxCornerRadiusBottomEnd="29dp"
+                app:boxCornerRadiusBottomStart="29dp"
+                app:boxCornerRadiusTopEnd="29dp"
+                app:boxCornerRadiusTopStart="29dp"
+                android:hint="E-mail"
+                android:textColorHint="@color/app2"
+                app:startIconDrawable="@drawable/ic_mail"
+                app:startIconTint="@color/app2"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/app2"
+                app:boxStrokeColor="@color/app2"
+                app:hintTextColor="@color/app2"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeErrorColor="@color/app2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textWebEmailAddress"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textSize="20sp"
+                    android:textColor="@color/app2"
+                    android:textCursorDrawable="@null"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_username"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="315dp"
+                android:layout_marginRight="30dp"
+                app:boxCornerRadiusBottomEnd="29dp"
+                app:boxCornerRadiusBottomStart="29dp"
+                app:boxCornerRadiusTopEnd="29dp"
+                app:boxCornerRadiusTopStart="29dp"
+                android:hint="Username"
+                android:textColorHint="@color/app2"
+                app:startIconDrawable="@drawable/ic_person"
+                app:startIconTint="@color/app2"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/app2"
+                app:boxStrokeColor="@color/app2"
+                app:hintTextColor="@color/app2"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeErrorColor="@color/app2"
+                app:counterEnabled="true"
+                app:counterMaxLength="15">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:inputType="text"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColorHint="#888888"
+                    android:textSize="20sp"
+                    android:textColor="@color/app2"
+                    android:textCursorDrawable="@null"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_ph"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="390dp"
+                android:layout_marginRight="30dp"
+                app:boxCornerRadiusBottomEnd="29dp"
+                app:boxCornerRadiusBottomStart="29dp"
+                app:boxCornerRadiusTopEnd="29dp"
+                app:boxCornerRadiusTopStart="29dp"
+                android:hint="Phone number"
+                android:textColorHint="@color/app2"
+                app:startIconDrawable="@drawable/ic_phone"
+                app:startIconTint="@color/app2"
+                app:endIconMode="clear_text"
+                app:endIconTint="@color/app2"
+                app:boxStrokeColor="@color/app2"
+                app:hintTextColor="@color/app2"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeErrorColor="@color/app2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:inputType="phone"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColorHint="#888888"
+                    android:textSize="20sp"
+                    android:textColor="@color/app2"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="465dp"
+                android:layout_marginRight="30dp"
+                app:boxCornerRadiusBottomEnd="29dp"
+                app:boxCornerRadiusBottomStart="29dp"
+                app:boxCornerRadiusTopEnd="29dp"
+                app:boxCornerRadiusTopStart="29dp"
+                android:hint="@string/password"
+                android:textColorHint="@color/app2"
+                app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@color/app2"
+                app:endIconTint="@color/app2"
+                app:boxStrokeColor="@color/app2"
+                app:hintTextColor="@color/app2"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeErrorColor="@color/app2">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColorHint="#888888"
+                    android:textSize="20sp"
+                    android:textColor="@color/app2"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/new_cpassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="540dp"
+                android:layout_marginRight="30dp"
+                app:boxCornerRadiusBottomEnd="29dp"
+                app:boxCornerRadiusBottomStart="29dp"
+                app:boxCornerRadiusTopEnd="29dp"
+                app:boxCornerRadiusTopStart="29dp"
+                android:hint="Confirm Password"
+                android:textColorHint="@color/app2"
+                app:startIconDrawable="@drawable/ic_password"
+                app:startIconTint="@color/app2"
+                app:endIconMode="password_toggle"
+                app:endIconTint="@color/app2"
+                app:boxStrokeColor="@color/app2"
+                app:hintTextColor="@color/app2"
+                app:boxStrokeWidthFocused="2dp"
+                app:boxStrokeErrorColor="@color/app2">
+
+                <com.google.android.material.textfield.TextInputEditText
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="20dp"
+                    android:inputType="textPassword"
+                    android:fontFamily="@font/segoe_ui"
+                    android:textColorHint="#888888"
+                    android:textSize="20sp"
+                    android:textColor="@color/app2"
+                    android:textCursorDrawable="@null" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
 
     <TextView
         android:id="@+id/loginbtn_redirect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="195dp"
-        android:layout_marginTop="770dp"
-        android:fontFamily="@font/segoe_ui_bold"
-        android:text="@string/login"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/segoe_ui"
+        android:paddingBottom="20dp"
+        android:text="Already a member ? LOGIN "
         android:textColor="#CB4D2B"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-    
-    <Button
-        android:id="@+id/reg_back"
-        android:layout_width="29.61dp"
-        android:layout_height="19.2dp"
-        android:background="@drawable/back_btn"
-        android:layout_marginTop="35dp"
-        android:layout_marginLeft="20dp"/>
+        android:textSize="16sp" />
 
 </RelativeLayout>
