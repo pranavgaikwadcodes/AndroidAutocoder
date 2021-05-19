@@ -161,7 +161,7 @@
                 android:layout_below="@+id/first"
                 android:autoSizeMinTextSize="20sp"
                 android:fontFamily="@font/segoe_ui_bold"
-                android:text="2. 50+ Backgroung colors and Textures."
+                android:text="2. 50+ Background colors and Textures."
                 android:textColor="#253A4B"
                 android:textSize="20dp" />
 
