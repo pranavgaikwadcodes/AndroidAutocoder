@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.AndroidAutocoder" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+    <style name="Theme.AndroidAutocoder" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#CB4D2B</item>
         <item name="colorPrimaryVariant">#CB4D2B</item>

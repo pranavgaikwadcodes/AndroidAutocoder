@@ -1,15 +1,20 @@
 package com.example.androidautocoder;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.androidautocoder.Databases.SessionManager;
@@ -18,19 +23,31 @@ import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.HashMap;
 
-public class userProfile extends AppCompatActivity {
+public class userProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private View decorView;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
+    Toolbar toolbar;
 
     TextInputLayout Username, Email, Contact, Password;
     TextView TextUsername;
+    private Button Logout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
+
+
+        Logout = (Button) findViewById(R.id.nav_logoutbtn);
+        Logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                logoutUserFromApp();
+            }
+        });
+
 
         //show data function
         showUserData();
@@ -46,6 +63,35 @@ public class userProfile extends AppCompatActivity {
                 }
             }
         });
+
+//navbar code
+
+        /*------------------Hooks---------------------*/
+        drawerLayout = findViewById(R.id.drawer_layout);
+        navigationView = findViewById(R.id.navView);
+        toolbar = findViewById(R.id.toolbar);
+
+        /*------------------toolbar---------------------*/
+        setSupportActionBar(toolbar);
+
+
+        /*------------------navigation drawer menu---------------------*/
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.nav_drawer_open, R.string.nav_drawer_close);
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
+
+        /*------------------------custom toolbar open button-------------------------*/
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.menu_btn);
+
+
+        navigationView.bringToFront();
+        navigationView.setNavigationItemSelectedListener(this);
+        navigationView.setCheckedItem(R.id.click_profile);
+
+
+//navbar code end
 
     }
 
@@ -96,5 +142,62 @@ public class userProfile extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
     //    end hide bar
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.click_home:
+                Intent intent3 = new Intent(this, Home.class);
+                startActivity(intent3);
+                break;
+            case R.id.click_orderApp:
+                Intent intent = new Intent(this, Order_app.class);
+                startActivity(intent);
+                break;
+            case R.id.click_subscribe:
+                Intent intent1 = new Intent(this, subscribe.class);
+                startActivity(intent1);
+                break;
+            case R.id.click_profile:
+                break;
+
+            case R.id.share:
+                ApplicationInfo api = getApplicationContext().getApplicationInfo();
+                String apkpath = api.sourceDir;
+                Intent intent2 = new Intent(Intent.ACTION_SEND);
+                intent2.setType("text/plain");
+                String shareBody = "http://androidcoder.epizy.com/app/AndroidCoder.apk";
+                String sharesub = "AndroidCoder";
+                intent2.putExtra(Intent.EXTRA_SUBJECT, shareBody);
+                intent2.putExtra(Intent.EXTRA_TEXT, sharesub);
+                startActivity(Intent.createChooser(intent2, "ShareVia"));
+                break;
+
+            case R.id.help:
+                Uri uri = Uri.parse("http://androidcoder.epizy.com/#contact"); // missing 'http://' will cause crashed
+                Intent link = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(link);
+                break;
+
+            case R.id.click_logout:
+                logoutUserFromApp();
+                break;
+
+        }
+
+
+        drawerLayout.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+    public void logoutUserFromApp() {
+        //Session
+        SessionManager sessionManager = new SessionManager(this);
+        sessionManager.logoutUserFromSession();
+        Intent takeUserToLogin = new Intent(this, Login_page.class);
+        startActivity(takeUserToLogin);
+        finish();
+    }
 
 }

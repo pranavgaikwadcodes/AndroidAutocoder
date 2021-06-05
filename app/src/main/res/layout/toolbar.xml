@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    android:id="@+id/toolbar"
+    android:background="#C6C6C6"
+    android:elevation="4dp">
+
+
+    <!--top bar (menu icon , logo , logout icon)-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="-60dp"
+                    android:background="@drawable/app_logo" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="right"
+                android:layout_weight="1">
+
+                <Button
+                    android:id="@+id/nav_logoutbtn"
+                    android:layout_width="24.98dp"
+                    android:layout_height="26.95dp"
+                    android:layout_marginTop="16.51dp"
+                    android:background="@drawable/logout" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+</androidx.appcompat.widget.Toolbar>

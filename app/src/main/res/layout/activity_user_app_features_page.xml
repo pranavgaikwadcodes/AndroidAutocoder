@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app2"
+    tools:context=".UserAppFeatures_Page">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="App Features"
+                android:textColor="#FFB941"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:fontFamily="@font/segoe_ui"
+                android:text="Select Features You want to include in app"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="160dp">
+
+
+                <GridLayout
+                    android:id="@+id/mainGrid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alignmentMode="alignBounds"
+                    android:columnCount="2"
+                    android:columnOrderPreserved="true"
+                    android:rowCount="13">
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/adminPanel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        android:minWidth="180dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill"
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginLeft="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Admin Panel"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/aboutUs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="60dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp"
+                        android:minWidth="180dp"
+                        android:layout_rowWeight="1"
+                        android:layout_columnWeight="1"
+                        android:layout_gravity="fill_horizontal"
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="9dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="About Us"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/notification"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Notification"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/share"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Share"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/review"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Review / Rate-Us"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uploadVideo"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Upload Video"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/website"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Website"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uploadPhoto"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Upload Photo"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/videoConferance"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Video Conferance"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/login_registerPg"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Login / Register Page"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/appUpdates"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="App Updates"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/formBuilder"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Form Builder"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/eCommerce"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="E - Commerce"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/donate"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Donate"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/map"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Maps"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/blog"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Upload Blogs"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/fb"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Facebook"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/linkedin"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Linked In"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/email"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="E-mail"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/twitter"
+                        android:layout_width="180dp"
+                        android:layout_height="60dp"
+                        android:layout_marginRight="18dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp"
+                        android:layout_marginTop="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:text="Twitter"
+                                android:textAlignment="center"
+                                android:textColor="@color/app2"
+                                android:textSize="20dp">
+
+                            </TextView>
+
+                        </RelativeLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                </GridLayout>
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+    <!--floating button-->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+        <Button
+            android:id="@+id/btnNew"
+            android:layout_width="150dp"
+            android:layout_height="62dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/round_btn"
+            android:fontFamily="@font/segoe_ui"
+            android:text="Next"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+
+    <!--top bar (menu icon , logo , logout icon)-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="#A8A8A8" />
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_logo" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

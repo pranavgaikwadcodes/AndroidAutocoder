@@ -2,88 +2,11 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/order_layout"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#253A4B"
     tools:context=".Order_app">
-
-    <!--top bar (menu icon , logo , logout icon)-->
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="#C6C6C6" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="14dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/menu_btn"
-                    android:onClick="menu_btn" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <ImageView
-                    android:layout_width="200dp"
-                    android:layout_height="200dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="-60dp"
-                    android:background="@drawable/app_logo" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="right"
-                android:layout_weight="1">
-
-                <Button
-                    android:id="@+id/home_logoutbtn"
-                    android:layout_width="24.98dp"
-                    android:layout_height="26.95dp"
-                    android:layout_marginTop="16.51dp"
-
-                    android:background="@drawable/logout" />
-
-            </LinearLayout>
-        </LinearLayout>
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -236,7 +159,19 @@
 
     </ScrollView>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/toolbar" />
+
+    </FrameLayout>
+
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/userappinfolayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".UserAppInfoPage_1">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="App Information"
+                android:textColor="#FFB941"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userAppName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="160dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="@color/app2"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    app:boxStrokeColor="@color/app2"
+                    app:boxStrokeErrorColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:startIconDrawable="@drawable/user_apk_name_icon"
+                    app:startIconTint="@color/app2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="App Name"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/app2"
+                        android:textColorHint="#888888"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userCompanyName"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="@color/app2"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    app:boxStrokeColor="@color/app2"
+                    app:boxStrokeErrorColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:startIconDrawable="@drawable/ic_baseline_home_work_24"
+                    app:startIconTint="@color/app2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="Company Name"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/app2"
+                        android:textColorHint="#888888"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userAppDesc"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="@color/app2"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    app:boxStrokeColor="@color/app2"
+                    app:boxStrokeErrorColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:startIconDrawable="@drawable/ic_baseline_description_24"
+                    app:startIconTint="@color/app2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="App Description (if any)"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/app2"
+                        android:textColorHint="#888888"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userCompanydesc"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColorHint="@color/app2"
+                    app:boxCornerRadiusBottomEnd="29dp"
+                    app:boxCornerRadiusBottomStart="29dp"
+                    app:boxCornerRadiusTopEnd="29dp"
+                    app:boxCornerRadiusTopStart="29dp"
+                    app:boxStrokeColor="@color/app2"
+                    app:boxStrokeErrorColor="@color/app2"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconMode="clear_text"
+                    app:endIconTint="@color/app2"
+                    app:hintTextColor="@color/app2"
+                    app:startIconDrawable="@drawable/ic_baseline_description_24"
+                    app:startIconTint="@color/app2">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:hint="Company Description (if any)"
+                        android:inputType="text"
+                        android:paddingStart="20dp"
+                        android:textColor="@color/app2"
+                        android:textColorHint="#888888"
+                        android:textCursorDrawable="@null"
+                        android:textSize="20sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <Button
+                    android:id="@+id/next"
+                    android:layout_width="162dp"
+                    android:layout_height="53dp"
+                    android:layout_marginLeft="180dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/round_btn"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="NEXT"
+                    android:textColor="@color/white"
+                    android:textSize="25sp" />
+
+
+            </LinearLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <!--top bar (menu icon , logo , logout icon)-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/app2" />
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_logo" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
