@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class finalUserAppDownload extends AppCompatActivity {
+public class FinalPageOfFeatures extends AppCompatActivity {
 
     private View decorView;
 
@@ -16,7 +16,7 @@ public class finalUserAppDownload extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_final_user_app_download);
+        setContentView(R.layout.activity_final_page_of_features);
 
         gotoeditapp = (Button) findViewById(R.id.gotoeditapp);
         gotoeditapp.setOnClickListener(new View.OnClickListener() {

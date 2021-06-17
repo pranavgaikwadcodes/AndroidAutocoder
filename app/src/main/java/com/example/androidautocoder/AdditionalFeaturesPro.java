@@ -29,6 +29,15 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional_features_pro);
 
+        purchasePro = findViewById(R.id.purchase_pro);
+        purchasePro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pro = new Intent(getApplicationContext(),subscribe.class);
+                startActivity(pro);
+            }
+        });
+
 
         //        hide bars
         decorView = getWindow().getDecorView();
@@ -83,7 +92,7 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent skip = new Intent(getApplicationContext(), finalUserAppDownload.class);
+                Intent skip = new Intent(getApplicationContext(), FinalPageOfFeatures.class);
                 insertAllDataToDB();
                 startActivity(skip);
             }

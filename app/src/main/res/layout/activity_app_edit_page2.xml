@@ -11,7 +11,251 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/segoe_ui_italic"
+                android:text="Confirm All Details"
+                android:textAlignment="center"
+                android:textColor="@color/app2"
+                android:textSize="25dp" />
+            <!--admin details-->
+            <RelativeLayout
+                android:id="@+id/admindetaillayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp">
+
+                <TextView
+                    android:id="@+id/admindetailstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="ADMIN DETAILS : "
+                    android:textColor="@color/app1"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/adminUserPass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/admindetailstxt"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="Username and Password"
+                    android:textColor="@color/app2"
+                    android:textSize="16dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/admindetaillayout"
+                android:layout_margin="20dp">
+
+                <TextView
+                    android:id="@+id/featuresdetailstxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:fontFamily="@font/segoe_ui_bold"
+                    android:text="Features Details"
+                    android:textColor="@color/app1"
+                    android:textSize="20dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/featuresdetailstxt"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:id="@+id/appName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/appDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/appName"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/companyName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/appDesc"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/companyDesc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/companyName"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/website"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/companyDesc"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/aboutus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/website"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/fburl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/aboutus"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/linkedin"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/fburl"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/twitter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/linkedin"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/email"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/twitter"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/blog1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/email"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/blog2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/blog1"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/donationlink"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/blog2"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/donationlink"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/videourl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/address"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                    <TextView
+                        android:id="@+id/imageurl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/videourl"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/segoe_ui"
+                        android:text=""
+                        android:textColor="@color/app2"
+                        android:textSize="16dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
 
     </ScrollView>
 
@@ -30,8 +274,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="-40dp"
-            android:layout_marginLeft="-40dp">
+            android:layout_marginLeft="-40dp"
+            android:layout_marginTop="-40dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -48,16 +292,15 @@
             android:layout_marginRight="10dp">
 
             <Button
-                android:id="@+id/proceedToConfirm"
+                android:id="@+id/generateAPP"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Proceed to confirm"
-                android:fontFamily="@font/segoe_ui_bold"/>
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="Proceed to confirm" />
         </RelativeLayout>
 
 
     </RelativeLayout>
-
 
 
 </RelativeLayout>

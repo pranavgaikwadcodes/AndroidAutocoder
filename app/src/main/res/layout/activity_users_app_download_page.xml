@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".usersAppDownloadPage"
+    android:background="@color/app2">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download Your Demo App"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp"
+        android:fontFamily="@font/segoe_ui_italic"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NOTE* To login this app use your Admin Username and Password you have created, if not please select admin panel feature from features to gain access to Admin credentials"
+        android:textColor="@color/white"
+        android:fontFamily="@font/segoe_ui"
+        android:textSize="16dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="150dp"
+        android:textAlignment="center"/>
+
+    <Button
+        android:id="@+id/DownloadApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Download now"
+        android:textSize="20dp"
+        android:drawableLeft="@drawable/ic_download"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>

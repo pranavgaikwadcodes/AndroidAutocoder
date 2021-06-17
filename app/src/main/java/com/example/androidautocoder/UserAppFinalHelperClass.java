@@ -2,13 +2,11 @@ package com.example.androidautocoder;
 
 public class UserAppFinalHelperClass {
 
-    String appName, appDesc, companyName, companyDesc, adminPanelUser, adminPanelPass, aboutUs, website, blog, blog2, fb, linkedin, Email, twitter;
+    String appName, appDesc, companyName, companyDesc, adminPanelUser, adminPanelPass, aboutUs, website, blog1 , blog2,
+            fb, linkedin, Email, twitter , address , donate , video , image;
 
-
-    public UserAppFinalHelperClass( String appDesc, String companyName, String companyDesc, String adminPanelUser,
-                                   String adminPanelPass, String aboutUs, String website, String blog, String blog2, String fb,
-                                   String linkedin, String email, String twitter) {
-//        this.appName = appName;
+    public UserAppFinalHelperClass(String appName, String appDesc, String companyName, String companyDesc, String adminPanelUser, String adminPanelPass, String aboutUs, String website, String blog1, String blog2, String fb, String linkedin, String email, String twitter, String address, String donate, String video, String image) {
+        this.appName = appName;
         this.appDesc = appDesc;
         this.companyName = companyName;
         this.companyDesc = companyDesc;
@@ -16,17 +14,21 @@ public class UserAppFinalHelperClass {
         this.adminPanelPass = adminPanelPass;
         this.aboutUs = aboutUs;
         this.website = website;
-        this.blog = blog;
+        this.blog1 = blog1;
         this.blog2 = blog2;
         this.fb = fb;
         this.linkedin = linkedin;
-        this.Email = email;
+        Email = email;
         this.twitter = twitter;
+        this.address = address;
+        this.donate = donate;
+        this.video = video;
+        this.image = image;
     }
-//
-//    public String getAppName() {
-//        return appName;
-//    }
+
+    public String getAppName() {
+        return appName;
+    }
 
     public void setAppName(String appName) {
         this.appName = appName;
@@ -88,12 +90,12 @@ public class UserAppFinalHelperClass {
         this.website = website;
     }
 
-    public String getBlog() {
-        return blog;
+    public String getBlog1() {
+        return blog1;
     }
 
-    public void setBlog(String blog) {
-        this.blog = blog;
+    public void setBlog1(String blog1) {
+        this.blog1 = blog1;
     }
 
     public String getBlog2() {
@@ -134,5 +136,37 @@ public class UserAppFinalHelperClass {
 
     public void setTwitter(String twitter) {
         this.twitter = twitter;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getDonate() {
+        return donate;
+    }
+
+    public void setDonate(String donate) {
+        this.donate = donate;
+    }
+
+    public String getVideo() {
+        return video;
+    }
+
+    public void setVideo(String video) {
+        this.video = video;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }

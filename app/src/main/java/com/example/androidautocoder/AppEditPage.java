@@ -132,6 +132,7 @@ public class AppEditPage extends AppCompatActivity {
                 next.putExtra("userAddress", userAddress.getEditText().getText().toString());
                 next.putExtra("userVideo", userVideo.getEditText().getText().toString());
                 next.putExtra("userDonateLink", userDonateLink.getEditText().getText().toString());
+                next.putExtra("showUrlForIMG", showUrlForIMG.getText().toString());
                 startActivity(next);
             }
         });
