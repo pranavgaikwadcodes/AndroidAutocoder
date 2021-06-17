@@ -11,52 +11,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="60dp">
-
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/address"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="20dp"
-                android:textColorHint="@color/app2"
-                app:boxCornerRadiusBottomEnd="29dp"
-                app:boxCornerRadiusBottomStart="29dp"
-                app:boxCornerRadiusTopEnd="29dp"
-                app:boxCornerRadiusTopStart="29dp"
-                app:boxStrokeColor="@color/app2"
-                app:boxStrokeErrorColor="@color/app2"
-                app:boxStrokeWidthFocused="2dp"
-                app:endIconMode="clear_text"
-                app:endIconTint="@color/app2"
-                app:hintTextColor="@color/app2"
-                app:startIconDrawable="@drawable/ic_add_location"
-                app:startIconTint="@color/app2">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/segoe_ui"
-                    android:hint="Address / Location"
-                    android:inputType="textMultiLine"
-                    android:paddingStart="20dp"
-                    android:textColor="@color/app2"
-                    android:textColorHint="#888888"
-                    android:textCursorDrawable="@null"
-                    android:textSize="20sp" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        </RelativeLayout>
-
-
     </ScrollView>
 
 
