@@ -7,6 +7,9 @@ import java.util.HashMap;
 
 public class SessionManager {
 
+    public static final String KEY_APPNAME = "appname";
+
+
     //variables
     SharedPreferences userSession;
     SharedPreferences.Editor editor;
@@ -61,4 +64,19 @@ public class SessionManager {
         editor.commit();
     }
 
+
+
+
+    public void createAppInfoSessions(String appName){
+        editor.putString(KEY_APPNAME,appName);
+        editor.commit();
+    }
+
+    public HashMap<String,String> getAppInfoFromSession(){
+        HashMap<String, String> appInfo = new HashMap<>();
+
+        appInfo.put(KEY_APPNAME,userSession.getString(KEY_APPNAME,"appname"));
+
+        return appInfo;
+    }
 }

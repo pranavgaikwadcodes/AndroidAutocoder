@@ -12,6 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,6 +23,7 @@
             android:paddingBottom="100dp">
 
             <TextView
+                android:id="@+id/nameOfPage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -38,12 +43,15 @@
                 android:text="Select Features You want to include in app"
                 android:textColor="#FFFFFF"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:autoSizeMinTextSize="11sp"
+                android:padding="5dp"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginTop="160dp">
+                android:layout_marginTop="160dp"
+                android:paddingBottom="20dp">
 
 
                 <GridLayout
@@ -60,17 +68,17 @@
                         android:id="@+id/adminPanel"
                         android:layout_width="wrap_content"
                         android:layout_height="60dp"
-                        android:minWidth="180dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_row="0"
                         android:layout_rowWeight="1"
+                        android:layout_column="0"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill"
-                        android:layout_row="0"
-                        android:layout_column="0"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="9dp"
-                        android:layout_marginLeft="20dp">
+                        android:minWidth="180dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -96,17 +104,17 @@
                         android:id="@+id/aboutUs"
                         android:layout_width="wrap_content"
                         android:layout_height="60dp"
-                        app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp"
-                        android:minWidth="180dp"
+                        android:layout_row="0"
                         android:layout_rowWeight="1"
+                        android:layout_column="1"
                         android:layout_columnWeight="1"
                         android:layout_gravity="fill_horizontal"
-                        android:layout_row="0"
-                        android:layout_column="1"
+                        android:layout_marginLeft="9dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="20dp"
-                        android:layout_marginLeft="9dp">
+                        android:minWidth="180dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -132,10 +140,10 @@
                         android:id="@+id/notification"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -161,10 +169,10 @@
                         android:id="@+id/share"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -190,10 +198,10 @@
                         android:id="@+id/review"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -219,10 +227,10 @@
                         android:id="@+id/uploadVideo"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -248,10 +256,10 @@
                         android:id="@+id/website"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -277,10 +285,10 @@
                         android:id="@+id/uploadPhoto"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -306,10 +314,10 @@
                         android:id="@+id/videoConferance"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -335,10 +343,10 @@
                         android:id="@+id/login_registerPg"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -364,10 +372,10 @@
                         android:id="@+id/appUpdates"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -393,10 +401,10 @@
                         android:id="@+id/formBuilder"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -422,10 +430,10 @@
                         android:id="@+id/eCommerce"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -451,10 +459,10 @@
                         android:id="@+id/donate"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -480,10 +488,10 @@
                         android:id="@+id/map"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -494,7 +502,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_centerInParent="true"
                                 android:fontFamily="@font/segoe_ui_bold"
-                                android:text="Maps"
+                                android:text="Address / Location"
                                 android:textAlignment="center"
                                 android:textColor="@color/app2"
                                 android:textSize="20dp">
@@ -509,10 +517,10 @@
                         android:id="@+id/blog"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -538,10 +546,10 @@
                         android:id="@+id/fb"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -567,10 +575,10 @@
                         android:id="@+id/linkedin"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -596,10 +604,10 @@
                         android:id="@+id/email"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -625,10 +633,10 @@
                         android:id="@+id/twitter"
                         android:layout_width="180dp"
                         android:layout_height="60dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginRight="18dp"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="16dp"
-                        android:layout_marginTop="20dp">
+                        app:cardElevation="16dp">
 
                         <RelativeLayout
                             android:layout_width="match_parent"
@@ -658,6 +666,7 @@
 
         </RelativeLayout>
 
+        </HorizontalScrollView>
 
     </ScrollView>
 

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,21 +19,29 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.navigation.NavigationView;
 
-public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class MyCreatedApps extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private View decorView;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
-    Button btnNew, Logout;
-    CardView edubtn;
+    Button Logout;
+    CardView cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_my_created_apps);
 
-        goToSelectedCategory();
+        cardView = (CardView) findViewById(R.id.cardview);
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),AppEditPage.class);
+                startActivity(intent);
+            }
+        });
+
 
         //        hide bars
         decorView = getWindow().getDecorView();
@@ -55,17 +62,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             }
         });
 
-
-        btnNew = (Button) findViewById(R.id.btnNew);
-        btnNew.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent apknewbtn = new Intent(Home.this, subscribe.class);
-                startActivity(apknewbtn);
-                Toast toast = Toast.makeText(getApplicationContext(), "You need to purchase PRO PACK to make custom apks", Toast.LENGTH_LONG);
-                toast.show();
-            }
-        });
 
 //navbar code
 
@@ -91,7 +87,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
         navigationView.bringToFront();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.click_home);
+        navigationView.setCheckedItem(R.id.my_apps);
 
 
 //navbar code end
@@ -121,10 +117,10 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.click_home:
+                Intent home = new Intent(this, Home.class);
+                startActivity(home);
                 break;
             case R.id.my_apps:
-                Intent myapp = new Intent(this, MyCreatedApps.class);
-                startActivity(myapp);
                 break;
             case R.id.click_orderApp:
                 Intent intent = new Intent(this, Order_app.class);
@@ -178,17 +174,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         finish();
     }
 
-    public void goToSelectedCategory() {
-        edubtn = (CardView) findViewById(R.id.edu);
-        edubtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), UserAppInfoPage_1.class);
-                startActivity(intent);
-            }
-        });
-
-    }
 
 
     //        hide bars
@@ -209,5 +194,6 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
     //    end hide bar
+
 
 }

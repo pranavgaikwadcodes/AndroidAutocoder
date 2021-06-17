@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import androidx.cardview.widget.CardView;
 public class UserAppFeatures_Page extends AppCompatActivity {
     Button button;
     GridLayout mainGrid;
+    TextView nameOfPage;
+
     private View decorView;
     public String adminPanelstatus = "no";
     public String aboutUsstatus = "no";
@@ -41,6 +44,17 @@ public class UserAppFeatures_Page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_app_features_page);
 
+
+//        get content from last page
+        Bundle extras = getIntent().getExtras();
+        String appName = extras.getString("appName");
+        String companyName = extras.getString("companyName");
+        String appDesc = extras.getString("appDesc");
+        String companyDesc = extras.getString("companyDesc");
+//
+//        nameOfPage = (TextView) findViewById(R.id.nameOfPage);
+//        nameOfPage.setText(appName);
+
         mainGrid = (GridLayout) findViewById(R.id.mainGrid);
 
         //set event
@@ -60,30 +74,36 @@ public class UserAppFeatures_Page extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent goAhed = new Intent(UserAppFeatures_Page.this,fillAppFeaturesInfo.class);
+                Intent goAhed = new Intent(UserAppFeatures_Page.this, AdditionalFeaturesPro.class);
+
                 isSetColorThis();
-                goAhed.putExtra("adminPanel",adminPanelstatus);
-                goAhed.putExtra("aboutUs",aboutUsstatus);
-                goAhed.putExtra("notification",notificationstatus);
-                goAhed.putExtra("share",sharestatus);
-                goAhed.putExtra("review",reviewstatus);
-                goAhed.putExtra("uploadVideo",uploadVideostatus);
-                goAhed.putExtra("website",websitestatus);
-                goAhed.putExtra("uploadPhoto",uploadPhotostatus);
-                goAhed.putExtra("videoConferance",videoConferancestatus);
-                goAhed.putExtra("login_registerPg",login_registerPg_status);
-                goAhed.putExtra("appUpdates",appUpdatesstatus);
-                goAhed.putExtra("formBuilder",formBuilderstatus);
-                goAhed.putExtra("eCommerce",eCommercestatus);
-                goAhed.putExtra("donate",donatestatus);
-                goAhed.putExtra("map",mapstatus);
-                goAhed.putExtra("blog",blogstatus);
-                goAhed.putExtra("fb",fbstatus);
-                goAhed.putExtra("linkedin",linkedinstatus);
-                goAhed.putExtra("email",emailstatus);
-                goAhed.putExtra("twitter",twitterstatus);
+
+                goAhed.putExtra("appName",appName);
+                goAhed.putExtra("companyName",companyName);
+                goAhed.putExtra("appDesc",appDesc);
+                goAhed.putExtra("companyDesc",companyDesc);
 
 
+                goAhed.putExtra("adminPanel", adminPanelstatus);
+                goAhed.putExtra("aboutUs", aboutUsstatus);
+                goAhed.putExtra("notification", notificationstatus);
+                goAhed.putExtra("share", sharestatus);
+                goAhed.putExtra("review", reviewstatus);
+                goAhed.putExtra("uploadVideo", uploadVideostatus);
+                goAhed.putExtra("website", websitestatus);
+                goAhed.putExtra("uploadPhoto", uploadPhotostatus);
+                goAhed.putExtra("videoConferance", videoConferancestatus);
+                goAhed.putExtra("login_registerPg", login_registerPg_status);
+                goAhed.putExtra("appUpdates", appUpdatesstatus);
+                goAhed.putExtra("formBuilder", formBuilderstatus);
+                goAhed.putExtra("eCommerce", eCommercestatus);
+                goAhed.putExtra("donate", donatestatus);
+                goAhed.putExtra("map", mapstatus);
+                goAhed.putExtra("blog", blogstatus);
+                goAhed.putExtra("fb", fbstatus);
+                goAhed.putExtra("linkedin", linkedinstatus);
+                goAhed.putExtra("email", emailstatus);
+                goAhed.putExtra("twitter", twitterstatus);
 
 
                 CardView adminPanel = (CardView) findViewById(R.id.adminPanel);
@@ -125,15 +145,14 @@ public class UserAppFeatures_Page extends AppCompatActivity {
                         fb.getCardBackgroundColor().getDefaultColor() == -1 &&
                         linkedin.getCardBackgroundColor().getDefaultColor() == -1 &&
                         email.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        twitter.getCardBackgroundColor().getDefaultColor() == -1 )
-                {
+                        twitter.getCardBackgroundColor().getDefaultColor() == -1) {
 
                     Toast.makeText(UserAppFeatures_Page.this, "Select any one to continue", Toast.LENGTH_SHORT).show();
 
-                }else {
+                } else {
 
-                startActivity(goAhed);
-                finish();
+                    startActivity(goAhed);
+                    finish();
                 }
             }
         });
@@ -165,14 +184,14 @@ public class UserAppFeatures_Page extends AppCompatActivity {
         // loop all child items of main grid
         for (int i = 0; i < mainGrid.getChildCount(); i++) {
             CardView cardView = (CardView) mainGrid.getChildAt(i);
-            final int finalI = i;
+//            final int finalI = i;
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
                         //change background color
                         cardView.setCardBackgroundColor(Color.parseColor("#FF6C44"));
-                        Toast.makeText(UserAppFeatures_Page.this, "index : " + finalI, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(UserAppFeatures_Page.this, "index : " + finalI, Toast.LENGTH_SHORT).show();
                     } else {
                         //change background color
                         cardView.setCardBackgroundColor(Color.parseColor("#ffffff"));
@@ -205,67 +224,65 @@ public class UserAppFeatures_Page extends AppCompatActivity {
         CardView twitter = (CardView) findViewById(R.id.twitter);
 
 
-
-
         if (adminPanel.getCardBackgroundColor().getDefaultColor() != -1) {
-            adminPanelstatus="yes";
+            adminPanelstatus = "yes";
         }
         if (aboutUs.getCardBackgroundColor().getDefaultColor() != -1) {
-            aboutUsstatus="yes";
+            aboutUsstatus = "yes";
         }
         if (notification.getCardBackgroundColor().getDefaultColor() != -1) {
-            notificationstatus="yes";
+            notificationstatus = "yes";
         }
         if (share.getCardBackgroundColor().getDefaultColor() != -1) {
-            sharestatus="yes";
+            sharestatus = "yes";
         }
         if (review.getCardBackgroundColor().getDefaultColor() != -1) {
-            reviewstatus="yes";
+            reviewstatus = "yes";
         }
         if (uploadVideo.getCardBackgroundColor().getDefaultColor() != -1) {
-            uploadVideostatus="yes";
+            uploadVideostatus = "yes";
         }
         if (website.getCardBackgroundColor().getDefaultColor() != -1) {
-            websitestatus="yes";
+            websitestatus = "yes";
         }
         if (uploadPhoto.getCardBackgroundColor().getDefaultColor() != -1) {
-            uploadPhotostatus="yes";
+            uploadPhotostatus = "yes";
         }
         if (videoConferance.getCardBackgroundColor().getDefaultColor() != -1) {
-            videoConferancestatus="yes";
+            videoConferancestatus = "yes";
         }
         if (login_registerPg.getCardBackgroundColor().getDefaultColor() != -1) {
-            login_registerPg_status="yes";
+            login_registerPg_status = "yes";
         }
         if (appUpdates.getCardBackgroundColor().getDefaultColor() != -1) {
-            appUpdatesstatus="yes";
+            appUpdatesstatus = "yes";
         }
         if (formBuilder.getCardBackgroundColor().getDefaultColor() != -1) {
-            formBuilderstatus="yes";
+            formBuilderstatus = "yes";
         }
         if (eCommerce.getCardBackgroundColor().getDefaultColor() != -1) {
-            eCommercestatus="yes";
+            eCommercestatus = "yes";
         }
         if (donate.getCardBackgroundColor().getDefaultColor() != -1) {
-            donatestatus="yes";
+            donatestatus = "yes";
         }
         if (map.getCardBackgroundColor().getDefaultColor() != -1) {
-            mapstatus="yes";
+            mapstatus = "yes";
         }
         if (blog.getCardBackgroundColor().getDefaultColor() != -1) {
-            blogstatus="yes";
+            blogstatus = "yes";
         }
         if (fb.getCardBackgroundColor().getDefaultColor() != -1) {
-            fbstatus="yes";
+            fbstatus = "yes";
         }
         if (linkedin.getCardBackgroundColor().getDefaultColor() != -1) {
-            linkedinstatus="yes";
+            linkedinstatus = "yes";
         }
         if (email.getCardBackgroundColor().getDefaultColor() != -1) {
-            emailstatus="yes";
+            emailstatus = "yes";
         }
         if (twitter.getCardBackgroundColor().getDefaultColor() != -1) {
-            twitterstatus="yes";
+            twitterstatus = "yes";
         }
     }
 

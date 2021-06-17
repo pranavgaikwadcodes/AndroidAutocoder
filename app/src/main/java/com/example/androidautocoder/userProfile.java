@@ -1,21 +1,20 @@
 package com.example.androidautocoder;
 
+import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
-
-import android.content.Intent;
-import android.content.pm.ApplicationInfo;
-import android.net.Uri;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.navigation.NavigationView;
@@ -150,6 +149,10 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
                 Intent intent3 = new Intent(this, Home.class);
                 startActivity(intent3);
                 break;
+            case R.id.my_apps:
+                Intent myapp = new Intent(this, MyCreatedApps.class);
+                startActivity(myapp);
+                break;
             case R.id.click_orderApp:
                 Intent intent = new Intent(this, Order_app.class);
                 startActivity(intent);
@@ -167,7 +170,7 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
                 Intent intent2 = new Intent(Intent.ACTION_SEND);
                 intent2.setType("text/plain");
                 String shareBody = "http://androidcoder.epizy.com/app/AndroidCoder.apk";
-                String sharesub = "AndroidCoder";
+                String sharesub = "http://androidcoder.epizy.com/app/AndroidCoder.apk";
                 intent2.putExtra(Intent.EXTRA_SUBJECT, shareBody);
                 intent2.putExtra(Intent.EXTRA_TEXT, sharesub);
                 startActivity(Intent.createChooser(intent2, "ShareVia"));

@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DDDDDD"
+    tools:context=".AdditionalFeaturesPro">
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="Additional Features"
+                android:textColor="#000000"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="120dp"
+                android:fontFamily="@font/segoe_ui_italic"
+                android:text="These Features Will Be Available After Purchasing Pro-Pack"
+                android:textColor="@color/black"
+                android:textSize="15dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginRight="10dp"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="5dp"
+                        app:cardMaxElevation="25dp"
+                        app:cardBackgroundColor="#6C6C6C"
+                        app:cardPreventCornerOverlap="true">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="THEME"
+                                android:fontFamily="@font/segoe_ui_bold"
+                                android:textSize="20dp"
+                                android:textColor="@color/white"
+                                android:layout_centerInParent="true"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="DISABLED"
+                                android:textColor="@color/white"
+                                android:layout_alignParentBottom="true"
+                                android:layout_centerHorizontal="true"
+                                android:paddingBottom="10dp"/>
+                        </RelativeLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="25dp"
+                    app:cardBackgroundColor="#6C6C6C"
+                    app:cardPreventCornerOverlap="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="1dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="FONT change"
+                            android:textAllCaps="true"
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:textSize="15dp"
+                            android:textColor="@color/white"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISABLED"
+                            android:textColor="@color/white"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="320dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="25dp"
+                    app:cardBackgroundColor="#6C6C6C"
+                    app:cardPreventCornerOverlap="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="customize"
+                            android:textAllCaps="true"
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISABLED"
+                            android:textColor="@color/white"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    app:cardCornerRadius="8dp"
+                    app:cardElevation="5dp"
+                    app:cardMaxElevation="25dp"
+                    app:cardBackgroundColor="#6C6C6C">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="publish app"
+                            android:textAllCaps="true"
+                            android:fontFamily="@font/segoe_ui_bold"
+                            android:textSize="20dp"
+                            android:textColor="@color/white"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISABLED"
+                            android:textColor="@color/white"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:paddingBottom="10dp"/>
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="650dp"
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:paddingBottom="20dp">
+
+                <Button
+                    android:id="@+id/purchase_pro"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:backgroundTint="@color/app2"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="purchase pro"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+
+                <Button
+                    android:id="@+id/skip"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="62dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:background="@drawable/round_btn"
+                    android:fontFamily="@font/segoe_ui"
+                    android:text="skip"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"/>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <!--top bar (menu icon , logo , logout icon)-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/app2" />
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="-40dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/app_logo" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

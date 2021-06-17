@@ -121,6 +121,10 @@ public class subscribe extends AppCompatActivity implements NavigationView.OnNav
                 Intent intent1 = new Intent(this, Home.class);
                 startActivity(intent1);
                 break;
+            case R.id.my_apps:
+                Intent myapp = new Intent(this, MyCreatedApps.class);
+                startActivity(myapp);
+                break;
             case R.id.click_orderApp:
                 Intent intent = new Intent(this, Order_app.class);
                 startActivity(intent);
@@ -137,7 +141,7 @@ public class subscribe extends AppCompatActivity implements NavigationView.OnNav
                 Intent intent2 = new Intent(Intent.ACTION_SEND);
                 intent2.setType("text/plain");
                 String shareBody = "http://androidcoder.epizy.com/app/AndroidCoder.apk";
-                String sharesub = "AndroidCoder";
+                String sharesub = "http://androidcoder.epizy.com/app/AndroidCoder.apk";
                 intent2.putExtra(Intent.EXTRA_SUBJECT, shareBody);
                 intent2.putExtra(Intent.EXTRA_TEXT, sharesub);
                 startActivity(Intent.createChooser(intent2, "ShareVia"));

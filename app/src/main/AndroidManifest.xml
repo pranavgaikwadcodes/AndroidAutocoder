@@ -13,7 +13,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidAutocoder">
-        <activity android:name=".fillAppFeaturesInfo"></activity>
+        <activity android:name=".AppEditPage2"></activity>
+        <activity
+            android:name=".AppEditPage"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".MyCreatedApps" />
+        <activity android:name=".finalUserAppDownload" />
+        <activity android:name=".AdditionalFeaturesPro" />
         <activity android:name=".UserAppFeatures_Page" />
         <activity
             android:name=".UserAppInfoPage_1"

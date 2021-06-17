@@ -1,9 +1,10 @@
 package com.example.androidautocoder;
 
 public class UserHelperClass {
-    String email,username,phone,password,cpassword;
+    String email, username, phone, password, cpassword;
 
-    public UserHelperClass() {  }
+    public UserHelperClass() {
+    }
 
     public UserHelperClass(String email, String username, String phone, String password, String cpassword) {
         this.email = email;
