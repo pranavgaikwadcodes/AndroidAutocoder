@@ -583,7 +583,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="30dp"
-                            android:text="Upload image"
+                            android:text="select image"
                             android:textSize="20dp"
                             android:drawableLeft="@drawable/ic_image"/>
 
@@ -594,6 +594,14 @@
                             android:maxHeight="200dp"
                             android:layout_marginHorizontal="20dp"
                             android:layout_below="@+id/uploadImg"/>
+
+                        <Button
+                            android:id="@+id/confirmUpload"
+                            android:layout_below="@+id/viewUploadedImg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginHorizontal="116dp"
+                            android:text="upload" />
 
                     </RelativeLayout>
 

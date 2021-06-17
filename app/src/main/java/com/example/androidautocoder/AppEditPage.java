@@ -1,12 +1,15 @@
 package com.example.androidautocoder;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidautocoder.Databases.SessionManager;
@@ -24,9 +27,12 @@ import java.util.HashMap;
 public class AppEditPage extends AppCompatActivity {
     private View decorView;
 
-    Button addBlog2, save ,uploadImageBtn;
-    TextInputLayout blog2, CompanyName, AppDesc, CompanyDesc, Website, AboutUs, Fb, LinkedIn, Twitter, Email, BlogURL, adminUser, adminPass ,userAddress, userVideo,userDonateLink;
-    TextView appNameHere,adminpanelsettingstxt;
+    Button addBlog2, save, uploadImageBtn, confirmUploadIMG;
+    TextInputLayout blog2, CompanyName, AppDesc, CompanyDesc, Website, AboutUs, Fb, LinkedIn, Twitter, Email, BlogURL, adminUser, adminPass, userAddress, userVideo, userDonateLink;
+    TextView appNameHere, adminpanelsettingstxt;
+
+    ImageView viewUploadedImg;
+    private Uri imageUri;
 
     //    database
     FirebaseDatabase rootNode;
@@ -38,7 +44,9 @@ public class AppEditPage extends AppCompatActivity {
         setContentView(R.layout.activity_app_edit_page);
 
         addBlog2 = (Button) findViewById(R.id.blogAddBtn);
-        adminpanelsettingstxt = (TextView)findViewById(R.id.aps);
+        adminpanelsettingstxt = (TextView) findViewById(R.id.aps);
+        viewUploadedImg = findViewById(R.id.viewUploadedImg);
+        confirmUploadIMG= findViewById(R.id.confirmUpload);
 
         retriveEverythingFromDB();
 
@@ -58,8 +66,8 @@ public class AppEditPage extends AppCompatActivity {
         blog2 = findViewById(R.id.blogURL2);
         userAddress = findViewById(R.id.userAddress);
         userVideo = findViewById(R.id.videoFromUser);
-        uploadImageBtn = findViewById(R.id.uploadImg);
         userDonateLink = findViewById(R.id.userDonateLink);
+        uploadImageBtn = findViewById(R.id.uploadImg);
 
 //        hide all edittext
         Website.setVisibility(View.GONE);
@@ -79,6 +87,8 @@ public class AppEditPage extends AppCompatActivity {
 
         blog2.setVisibility(View.GONE);
         addBlog2.setVisibility(View.GONE);
+
+        confirmUploadIMG.setVisibility(View.GONE);
 
         save = (Button) findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -100,10 +110,12 @@ public class AppEditPage extends AppCompatActivity {
                 next.putExtra("admin_User", adminUser.getEditText().getText().toString());
                 next.putExtra("admin_Pass", adminPass.getEditText().getText().toString());
                 next.putExtra("_Twitter", Twitter.getEditText().getText().toString());
+                next.putExtra("userAddress", userAddress.getEditText().getText().toString());
+                next.putExtra("userVideo", userVideo.getEditText().getText().toString());
+                next.putExtra("userDonateLink", userDonateLink.getEditText().getText().toString());
                 startActivity(next);
             }
         });
-
 
 
         addBlog2.setOnClickListener(new View.OnClickListener() {
@@ -116,6 +128,16 @@ public class AppEditPage extends AppCompatActivity {
                     blog2.setVisibility(v.GONE);
                     addBlog2.setText("Add +");
                 }
+            }
+        });
+
+        uploadImageBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent galleryIntent = new Intent();
+                galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
+                galleryIntent.setType("image/*");
+                startActivityForResult(galleryIntent, 2);
             }
         });
 
@@ -137,6 +159,16 @@ public class AppEditPage extends AppCompatActivity {
         String _Username = userDetails.get(SessionManager.KEY_USERNAME);
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 2 && resultCode == RESULT_OK && data != null) {
+            imageUri = data.getData();
+            viewUploadedImg.setImageURI(imageUri);
+            confirmUploadIMG.setVisibility(View.VISIBLE);
+        }
+    }
+
     private void retriveEverythingFromDB() {
 
 
@@ -153,7 +185,7 @@ public class AppEditPage extends AppCompatActivity {
                 String appName = snapshot.child("appName").getValue().toString();
                 String companyName = snapshot.child("companyName").getValue().toString();
                 String appDesc = snapshot.child("appDesc").getValue().toString();
-                String companyDesc = snapshot.child("appName").getValue().toString();
+                String companyDesc = snapshot.child("companyDesc").getValue().toString();
                 String adminPanel = snapshot.child("adminPanel").getValue().toString();
                 String aboutUs = snapshot.child("aboutUs").getValue().toString();
                 String notification = snapshot.child("notification").getValue().toString();
