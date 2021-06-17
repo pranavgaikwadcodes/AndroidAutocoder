@@ -119,7 +119,7 @@ public class AppEditPage2 extends AppCompatActivity {
                 progressDialog.setCancelable(false);
                 progressDialog.setMax(100);
                 progressDialog.setTitle("Generating App");
-                progressDialog.setMessage("please wait for some seconds");
+                progressDialog.setMessage("please wait for some time and don't switch between apps ");
                 progressDialog.setProgressStyle(progressDialog.STYLE_HORIZONTAL);
                 progressDialog.show();
                 new Thread(new Runnable() {
@@ -130,35 +130,7 @@ public class AppEditPage2 extends AppCompatActivity {
                                 Thread.sleep(200);
                                 progress++;
                                 progressDialog.setProgress(progress);
-                                if (progress<10){
-                                    progressDialog.setMessage("Generating Gradle....");
-                                }else if (progress<15){
-                                    progressDialog.setMessage("Building Gradle....");
-                                }else if (progress<20){
-                                    progressDialog.setMessage("Gradle Build Running....");
-                                }else if (progress<30){
-                                    progressDialog.setMessage("Setting Up SKD for you....");
-                                }else if (progress<45){
-                                    progressDialog.setMessage("Entering Safe Environment....");
-                                }else if (progress<50){
-                                    progressDialog.setMessage("Generating Code For Your App....");
-                                }else if (progress<70){
-                                    progressDialog.setMessage("Checking App Security....");
-                                }else if (progress<73){
-                                    progressDialog.setMessage("Fixing Issues....");
-                                }else if (progress<76){
-                                    progressDialog.setMessage("Indexing...");
-                                }else if (progress<80){
-                                    progressDialog.setMessage("Sending App To Debug....");
-                                }else if (progress<82){
-                                    progressDialog.setMessage("App Debug In Process");
-                                }else if (progress<92){
-                                    progressDialog.setMessage("Debug Success !");
-                                }else if (progress<94){
-                                    progressDialog.setMessage("Generating Safe App Fro You...");
-                                }else if (progress<97){
-                                    progressDialog.setMessage("Completing Security Process...");
-                                }
+
                                 if (progress==100){
                                     progressDialog.dismiss();
                                     Intent gotodownload = new Intent(getApplicationContext(),usersAppDownloadPage.class);
