@@ -1,24 +1,34 @@
 package com.example.androidautocoder;
 
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidautocoder.Databases.SessionManager;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -29,14 +39,18 @@ public class AppEditPage extends AppCompatActivity {
 
     Button addBlog2, save, uploadImageBtn, confirmUploadIMG;
     TextInputLayout blog2, CompanyName, AppDesc, CompanyDesc, Website, AboutUs, Fb, LinkedIn, Twitter, Email, BlogURL, adminUser, adminPass, userAddress, userVideo, userDonateLink;
-    TextView appNameHere, adminpanelsettingstxt;
+    TextView appNameHere, adminpanelsettingstxt, showUrlForIMG,showImgUploadTxt;
 
     ImageView viewUploadedImg;
     private Uri imageUri;
 
+    ProgressBar ImageUploadProgressBar;
+
     //    database
     FirebaseDatabase rootNode;
     DatabaseReference reference;
+
+    private StorageReference storageReference = FirebaseStorage.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +60,10 @@ public class AppEditPage extends AppCompatActivity {
         addBlog2 = (Button) findViewById(R.id.blogAddBtn);
         adminpanelsettingstxt = (TextView) findViewById(R.id.aps);
         viewUploadedImg = findViewById(R.id.viewUploadedImg);
-        confirmUploadIMG= findViewById(R.id.confirmUpload);
-
-        retriveEverythingFromDB();
+        confirmUploadIMG = findViewById(R.id.confirmUpload);
+        ImageUploadProgressBar = findViewById(R.id.ImageUploadProgressBar);
+        showUrlForIMG = findViewById(R.id.showUrlForIMG);
+        showImgUploadTxt=findViewById(R.id.showImgUploadTxt);
 
         appNameHere = (TextView) findViewById(R.id.appNameHere);
         AppDesc = findViewById(R.id.userApp_Desc);
@@ -68,6 +83,7 @@ public class AppEditPage extends AppCompatActivity {
         userVideo = findViewById(R.id.videoFromUser);
         userDonateLink = findViewById(R.id.userDonateLink);
         uploadImageBtn = findViewById(R.id.uploadImg);
+
 
 //        hide all edittext
         Website.setVisibility(View.GONE);
@@ -89,6 +105,9 @@ public class AppEditPage extends AppCompatActivity {
         addBlog2.setVisibility(View.GONE);
 
         confirmUploadIMG.setVisibility(View.GONE);
+        ImageUploadProgressBar.setVisibility(View.INVISIBLE);
+        showUrlForIMG.setVisibility(View.GONE);
+        showImgUploadTxt.setVisibility(View.GONE);
 
         save = (Button) findViewById(R.id.save);
         save.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +160,17 @@ public class AppEditPage extends AppCompatActivity {
             }
         });
 
+        confirmUploadIMG.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (imageUri != null) {
+                    uploadeImgToFirebase(imageUri);
+                } else {
+                    Toast.makeText(AppEditPage.this, "Please select Image !", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         //        hide bars
         decorView = getWindow().getDecorView();
@@ -157,6 +187,9 @@ public class AppEditPage extends AppCompatActivity {
         SessionManager sessionManager = new SessionManager(this);
         HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
         String _Username = userDetails.get(SessionManager.KEY_USERNAME);
+
+
+        retriveEverythingFromDB();
     }
 
     @Override
@@ -280,5 +313,49 @@ public class AppEditPage extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
     //    end hide bar
+
+
+    private void uploadeImgToFirebase(Uri uri) {
+
+        StorageReference fileRef = storageReference.child(System.currentTimeMillis() + "." + getFileExtention(uri));
+        fileRef.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+
+                fileRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        showUrlForIMG.setText(uri.toString());
+                        showImgUploadTxt.setText("IMAGE UPLOADED SUCCESSFULLY !");
+                        showImgUploadTxt.setVisibility(View.VISIBLE);
+                        ImageUploadProgressBar.setVisibility(View.INVISIBLE);
+                    }
+                });
+
+            }
+        }).addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onProgress(@NonNull @NotNull UploadTask.TaskSnapshot snapshot) {
+                ImageUploadProgressBar.setVisibility(View.VISIBLE);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull @NotNull Exception e) {
+                ImageUploadProgressBar.setVisibility(View.INVISIBLE);
+                Toast.makeText(AppEditPage.this, "Uploading Failed due to some reason!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+    private String getFileExtention(Uri mUri) {
+
+        ContentResolver cr = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cr.getType(mUri));
+
+    }
+
 
 }

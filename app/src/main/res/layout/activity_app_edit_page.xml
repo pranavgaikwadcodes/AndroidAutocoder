@@ -28,10 +28,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="App Information :"
                     android:textColor="@color/app1"
-                    android:textSize="20dp"
-                    android:layout_marginTop="10dp"/>
+                    android:textSize="20dp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -166,8 +166,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_marginTop="50dp">
+                    android:layout_marginTop="50dp"
+                    android:orientation="vertical">
 
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -210,8 +210,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -245,8 +245,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -280,8 +280,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -315,8 +315,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -350,8 +350,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -380,15 +380,14 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/blogURL1"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -397,10 +396,10 @@
                         app:boxStrokeColor="@color/app2"
                         app:boxStrokeErrorColor="@color/app2"
                         app:boxStrokeWidthFocused="2dp"
+                        app:endIconMode="clear_text"
                         app:hintTextColor="@color/app2"
                         app:startIconDrawable="@drawable/ic_text"
-                        app:startIconTint="@color/app2"
-                        app:endIconMode="clear_text">
+                        app:startIconTint="@color/app2">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -416,15 +415,15 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:visibility="gone"
                         android:id="@+id/blogURL2"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
+                        android:visibility="gone"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
                         app:boxCornerRadiusTopEnd="29dp"
@@ -432,10 +431,10 @@
                         app:boxStrokeColor="@color/app2"
                         app:boxStrokeErrorColor="@color/app2"
                         app:boxStrokeWidthFocused="2dp"
+                        app:endIconMode="clear_text"
                         app:hintTextColor="@color/app2"
                         app:startIconDrawable="@drawable/ic_text"
-                        app:startIconTint="@color/app2"
-                        app:endIconMode="clear_text">
+                        app:startIconTint="@color/app2">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -453,14 +452,14 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:gravity="right"
-                        android:layout_marginRight="20dp">
+                        android:layout_marginRight="20dp"
+                        android:gravity="right">
 
                         <Button
                             android:id="@+id/blogAddBtn"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ADD +"/>
+                            android:text="ADD +" />
 
                     </LinearLayout>
 
@@ -471,8 +470,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -506,8 +505,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -542,8 +541,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -583,29 +582,43 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="30dp"
+                            android:drawableLeft="@drawable/ic_image"
                             android:text="select image"
-                            android:textSize="20dp"
-                            android:drawableLeft="@drawable/ic_image"/>
+                            android:textSize="20dp" />
 
                         <ImageView
                             android:id="@+id/viewUploadedImg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:maxHeight="200dp"
+                            android:layout_below="@+id/uploadImg"
                             android:layout_marginHorizontal="20dp"
-                            android:layout_below="@+id/uploadImg"/>
+                            android:maxHeight="200dp" />
 
                         <Button
                             android:id="@+id/confirmUpload"
-                            android:layout_below="@+id/viewUploadedImg"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_below="@+id/viewUploadedImg"
                             android:layout_marginHorizontal="116dp"
                             android:text="upload" />
 
+                        <TextView
+                            android:id="@+id/showUrlForIMG"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:layout_below="@+id/confirmUpload"
+                            android:layout_marginHorizontal="10dp"/>
+
+                        <TextView
+                            android:id="@+id/showImgUploadTxt"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text=""
+                            android:layout_below="@+id/confirmUpload"
+                            android:layout_marginHorizontal="10dp"/>
+
                     </RelativeLayout>
-
-
 
 
                     <TextView
@@ -613,10 +626,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
+                        android:layout_marginTop="25dp"
                         android:text="Admin Panel Settings :"
                         android:textColor="@color/app1"
-                        android:textSize="20dp"
-                        android:layout_marginTop="25dp"/>
+                        android:textSize="20dp" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/setUsername"
@@ -624,8 +637,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="20dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -659,8 +672,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:layout_marginRight="20dp"
                         android:layout_marginTop="10dp"
+                        android:layout_marginRight="20dp"
                         android:textColorHint="@color/app2"
                         app:boxCornerRadiusBottomEnd="29dp"
                         app:boxCornerRadiusBottomStart="29dp"
@@ -669,11 +682,11 @@
                         app:boxStrokeColor="@color/app2"
                         app:boxStrokeErrorColor="@color/app2"
                         app:boxStrokeWidthFocused="2dp"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="@color/app2"
                         app:hintTextColor="@color/app2"
                         app:startIconDrawable="@drawable/ic_password"
-                        app:startIconTint="@color/app2"
-                        app:endIconMode="password_toggle"
-                        app:endIconTint="@color/app2">
+                        app:startIconTint="@color/app2">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:layout_width="match_parent"
@@ -687,8 +700,6 @@
                             android:textCursorDrawable="@null"
                             android:textSize="20sp" />
                     </com.google.android.material.textfield.TextInputLayout>
-
-
 
 
                 </LinearLayout>
@@ -714,8 +725,8 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_alignParentLeft="true"
-            android:layout_marginTop="-40dp"
-            android:layout_marginLeft="-40dp">
+            android:layout_marginLeft="-40dp"
+            android:layout_marginTop="-40dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -735,8 +746,8 @@
                 android:id="@+id/save"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NEXT"
-                android:fontFamily="@font/segoe_ui_bold"/>
+                android:fontFamily="@font/segoe_ui_bold"
+                android:text="NEXT" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -749,18 +760,24 @@
 
 
             <TextView
+                android:id="@+id/appNameHere"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
+                android:maxWidth="200dp"
                 android:text="App Name Here"
                 android:textColor="@color/app2"
                 android:textSize="20dp"
-                android:id="@+id/appNameHere"
-                android:textStyle="bold"
-                android:maxWidth="200dp"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/ImageUploadProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>
