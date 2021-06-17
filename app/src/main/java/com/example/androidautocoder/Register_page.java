@@ -1,9 +1,5 @@
 package com.example.androidautocoder;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,9 +9,12 @@ import android.os.Bundle;
 import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.textfield.TextInputLayout;
@@ -170,7 +169,7 @@ public class Register_page extends AppCompatActivity {
             regPassword.requestFocus();
             return false;
         } else if (!valPassword.matches(passwordVal)) {
-            regPassword.setError("Use Uppercase,Lowercase,SpecialCharacters");
+            regPassword.setError("Use Upper-Lower case,SpecialCharacters(@,#,etc)");
             regPassword.requestFocus();
             return false;
         } else if (valPassword.length() <= 5) {
