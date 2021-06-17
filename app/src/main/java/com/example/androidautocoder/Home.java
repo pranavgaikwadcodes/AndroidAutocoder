@@ -208,6 +208,11 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
                 | View.SYSTEM_UI_FLAG_FULLSCREEN
                 | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION;
     }
+
     //    end hide bar
 
+    public void catClicked(View view) {
+        Intent intent = new Intent(getApplicationContext(), UserAppInfoPage_1.class);
+        startActivity(intent);
+    }
 }
