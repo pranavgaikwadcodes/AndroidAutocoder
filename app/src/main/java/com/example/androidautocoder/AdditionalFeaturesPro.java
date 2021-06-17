@@ -73,13 +73,6 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
         String twitter = extras.getString("twitter");
 
 
-//
-//        SessionManager sessionManager = new SessionManager(getApplicationContext());
-//        HashMap<String, String> appInfo = sessionManager.getAppInfoFromSession();
-//        String appName = appInfo.get(SessionManager.KEY_APPNAME);
-
-
-
         skip = (Button) findViewById(R.id.skip);
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
