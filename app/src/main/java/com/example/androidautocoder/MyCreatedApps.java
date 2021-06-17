@@ -26,12 +26,29 @@ public class MyCreatedApps extends AppCompatActivity implements NavigationView.O
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     Button Logout;
-    CardView cardView;
+    CardView cardView,viewDemo,publishapk;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_created_apps);
+        publishapk=findViewById(R.id.publishapk);
+        publishapk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pro = new Intent(getApplicationContext(),subscribe.class);
+                startActivity(pro);
+            }
+        });
+
+        viewDemo=findViewById(R.id.viewDemo);
+        viewDemo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent downloadapk = new Intent(getApplicationContext(),usersAppDownloadPage.class);
+                startActivity(downloadapk);
+            }
+        });
 
         cardView = (CardView) findViewById(R.id.cardview);
         cardView.setOnClickListener(new View.OnClickListener() {

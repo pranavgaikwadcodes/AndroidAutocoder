@@ -49,6 +49,7 @@
                 android:layout_marginRight="40dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/viewDemo"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="300dp"
@@ -81,6 +82,7 @@
                 android:layout_marginRight="40dp">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/publishapk"
                     android:layout_width="match_parent"
                     android:layout_height="100dp"
                     android:layout_marginTop="450dp"
