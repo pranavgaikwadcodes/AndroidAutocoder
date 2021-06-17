@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class FinalPageOfFeatures extends AppCompatActivity {
+public class FinalPageOfFeature extends AppCompatActivity {
 
     private View decorView;
 

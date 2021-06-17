@@ -19,7 +19,7 @@
             android:name=".AppEditPage"
             android:windowSoftInputMode="adjustPan" />
         <activity android:name=".MyCreatedApps" />
-        <activity android:name=".finalUserAppDownload" />
+        <activity android:name=".FinalPageOfFeature" />
         <activity android:name=".AdditionalFeaturesPro" />
         <activity android:name=".UserAppFeatures_Page" />
         <activity
