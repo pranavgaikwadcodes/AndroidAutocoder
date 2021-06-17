@@ -18,7 +18,7 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
 
     private View decorView;
     TextView textView;
-    Button skip;
+    Button skip,purchase_pro;
 
     //    database
     FirebaseDatabase rootNode;
@@ -29,7 +29,15 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_additional_features_pro);
 
-
+        purchase_pro=findViewById(R.id.purchase_pro);
+        purchase_pro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pro = new Intent(getApplicationContext(),subscribe.class);
+                startActivity(pro);
+                finish();
+            }
+        });
 
         //        hide bars
         decorView = getWindow().getDecorView();
