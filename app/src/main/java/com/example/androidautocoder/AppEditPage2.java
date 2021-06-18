@@ -153,11 +153,40 @@ public class AppEditPage2 extends AppCompatActivity {
                 SessionManager sessionManager = new SessionManager(getApplicationContext());
                 HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
                 String _Username = userDetails.get(SessionManager.KEY_USERNAME);
-
+//
+//                HashMap setValForApp = new HashMap();
+//                setValForApp.put("appName",appName);
+//                setValForApp.put("appDesc",appDesc);
+//                setValForApp.put("CompanyName",CompanyName);
+//                setValForApp.put("CompanyDesc",CompanyDesc);
+//                setValForApp.put("adminUser",adminUser);
+//                setValForApp.put("adminPass",adminPass);
+//                setValForApp.put("AboutUs",AboutUs);
+//                setValForApp.put("Website",Website);
+//                setValForApp.put("BlogUrl1",BlogUrl1);
+//                setValForApp.put("BlogUrl2",BlogUrl2);
+//                setValForApp.put("Fb",Fb);
+//                setValForApp.put("LinkedIn",LinkedIn);
+//                setValForApp.put("Email",Email);
+//                setValForApp.put("Twitter",Twitter);
+//                setValForApp.put("userAddress",userAddress);
+//                setValForApp.put("userDonateLink",userDonateLink);
+//                setValForApp.put("userVideo",userVideo);
+//                setValForApp.put("ImageURL",ImageURL);
+//                reference.child(_Username).child("userAppData").updateChildren(setValForApp);
 
                 UserAppFinalHelperClass helperClass = new UserAppFinalHelperClass(appName, appDesc, CompanyName, CompanyDesc, adminUser,
                         adminPass, AboutUs, Website, BlogUrl1, BlogUrl2, Fb, LinkedIn, Email, Twitter, userAddress, userDonateLink, userVideo, ImageURL);
                 reference.child(_Username).child("userAppData").setValue(helperClass);
+
+
+                reference = rootNode.getReference("users").child(_Username);
+                HashMap hashMap = new HashMap();
+                hashMap.put("adminUsername",adminUser);
+                hashMap.put("adminPassword",adminPass);
+
+                reference.updateChildren(hashMap);
+
 
 
             }

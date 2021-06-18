@@ -191,7 +191,12 @@ public class AppEditPage extends AppCompatActivity {
 
 
         retriveEverythingFromDB();
+
+
+
     }
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
@@ -357,6 +362,7 @@ public class AppEditPage extends AppCompatActivity {
         return mime.getExtensionFromMimeType(cr.getType(mUri));
 
     }
+
 
 
 }

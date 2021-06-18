@@ -107,6 +107,7 @@ public class AdditionalFeaturesPro extends AppCompatActivity {
                         blog, fb, linkedin, email, twitter);
                 reference.child(_Username).child("appFeaturesInfo").setValue(helperClass);
 
+
             }
         });
 

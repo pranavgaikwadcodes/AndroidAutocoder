@@ -300,6 +300,8 @@ public class Register_page extends AppCompatActivity {
             String ph = regPhone.getEditText().getText().toString();
             String pass = regPassword.getEditText().getText().toString();
             String con_pass = regConfirmPassword.getEditText().getText().toString();
+            String adminUsername = "";
+            String adminPassword = "";
 
 
             UserHelperClass helperClass = new UserHelperClass(email, username, ph, pass, con_pass);

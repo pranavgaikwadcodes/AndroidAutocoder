@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.GravityCompat;
@@ -41,14 +42,26 @@ public class UserAppInfoPage_1 extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent next = new Intent(getApplicationContext(), UserAppFeatures_Page.class);
 
-                next.putExtra("appName",appName.getEditText().getText().toString());
-                next.putExtra("companyName",companyName.getEditText().getText().toString());
-                next.putExtra("appDesc",appDesc.getEditText().getText().toString());
-                next.putExtra("companyDesc",companyDesc.getEditText().getText().toString());
 
-                startActivity(next);
+                if (appName.getEditText().getText().toString().equals("") && companyName.getEditText().getText().toString().equals("") && appDesc.getEditText().getText().toString().equals("") && companyDesc.getEditText().getText().toString().equals("")){
+
+
+                    Toast.makeText(UserAppInfoPage_1.this, "Enter All Fields To Continue !", Toast.LENGTH_SHORT).show();
+
+                }else {
+
+                    Intent next = new Intent(getApplicationContext(), UserAppFeatures_Page.class);
+
+                    next.putExtra("appName",appName.getEditText().getText().toString());
+                    next.putExtra("companyName",companyName.getEditText().getText().toString());
+                    next.putExtra("appDesc",appDesc.getEditText().getText().toString());
+                    next.putExtra("companyDesc",companyDesc.getEditText().getText().toString());
+
+                    startActivity(next);
+
+                }
+
             }
         });
 
