@@ -285,7 +285,7 @@
                         android:layout_height="60dp"
                         android:fontFamily="@font/segoe_ui_bold"
                         android:paddingVertical="10dp"
-                        android:text="Workship"
+                        android:text="Worship"
                         android:textSize="32sp" />
 
                     <RelativeLayout
