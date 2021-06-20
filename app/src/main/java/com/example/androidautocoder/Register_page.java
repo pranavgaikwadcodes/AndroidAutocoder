@@ -291,7 +291,7 @@ public class Register_page extends AppCompatActivity {
             rootNode = FirebaseDatabase.getInstance();
             reference = rootNode.getReference("users");
 
-            if (!valConfirmpassword() | !valPassword() | !valPhone() | !valUsername() | !valEmail()) {
+            if (!valConfirmpassword() | !valPassword() | !valPhone() | !valUsername() | !valEmail() | !existEmail() | existPhoneNumber() | existUsername()) {
                 return;
             }
 

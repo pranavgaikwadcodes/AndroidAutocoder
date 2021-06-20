@@ -126,26 +126,26 @@ public class UserAppFeatures_Page extends AppCompatActivity {
                 CardView linkedin = (CardView) findViewById(R.id.linkedin);
                 CardView email = (CardView) findViewById(R.id.email);
                 CardView twitter = (CardView) findViewById(R.id.twitter);
-                if (adminPanel.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        aboutUs.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        notification.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        share.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        review.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        uploadVideo.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        website.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        uploadPhoto.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        videoConferance.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        login_registerPg.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        appUpdates.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        formBuilder.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        eCommerce.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        donate.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        map.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        blog.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        fb.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        linkedin.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        email.getCardBackgroundColor().getDefaultColor() == -1 &&
-                        twitter.getCardBackgroundColor().getDefaultColor() == -1) {
+                if (adminPanel.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        aboutUs.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        notification.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        share.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        review.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        uploadVideo.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        website.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        uploadPhoto.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        videoConferance.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        login_registerPg.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        appUpdates.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        formBuilder.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        eCommerce.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        donate.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        map.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        blog.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        fb.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        linkedin.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        email.getCardBackgroundColor().getDefaultColor() == Color.WHITE &&
+                        twitter.getCardBackgroundColor().getDefaultColor() == Color.WHITE) {
 
                     Toast.makeText(UserAppFeatures_Page.this, "Select any one to continue", Toast.LENGTH_SHORT).show();
 
@@ -188,7 +188,7 @@ public class UserAppFeatures_Page extends AppCompatActivity {
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if (cardView.getCardBackgroundColor().getDefaultColor() == -1) {
+                    if (cardView.getCardBackgroundColor().getDefaultColor() == Color.WHITE) {
                         //change background color
                         cardView.setCardBackgroundColor(Color.parseColor("#FF6C44"));
 //                        Toast.makeText(UserAppFeatures_Page.this, "index : " + finalI, Toast.LENGTH_SHORT).show();
@@ -224,64 +224,64 @@ public class UserAppFeatures_Page extends AppCompatActivity {
         CardView twitter = (CardView) findViewById(R.id.twitter);
 
 
-        if (adminPanel.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (adminPanel.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             adminPanelstatus = "yes";
         }
-        if (aboutUs.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (aboutUs.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             aboutUsstatus = "yes";
         }
-        if (notification.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (notification.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             notificationstatus = "yes";
         }
-        if (share.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (share.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             sharestatus = "yes";
         }
-        if (review.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (review.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             reviewstatus = "yes";
         }
-        if (uploadVideo.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (uploadVideo.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             uploadVideostatus = "yes";
         }
-        if (website.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (website.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             websitestatus = "yes";
         }
-        if (uploadPhoto.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (uploadPhoto.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             uploadPhotostatus = "yes";
         }
-        if (videoConferance.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (videoConferance.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             videoConferancestatus = "yes";
         }
-        if (login_registerPg.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (login_registerPg.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             login_registerPg_status = "yes";
         }
-        if (appUpdates.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (appUpdates.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             appUpdatesstatus = "yes";
         }
-        if (formBuilder.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (formBuilder.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             formBuilderstatus = "yes";
         }
-        if (eCommerce.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (eCommerce.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             eCommercestatus = "yes";
         }
-        if (donate.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (donate.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             donatestatus = "yes";
         }
-        if (map.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (map.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             mapstatus = "yes";
         }
-        if (blog.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (blog.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             blogstatus = "yes";
         }
-        if (fb.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (fb.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             fbstatus = "yes";
         }
-        if (linkedin.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (linkedin.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             linkedinstatus = "yes";
         }
-        if (email.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (email.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             emailstatus = "yes";
         }
-        if (twitter.getCardBackgroundColor().getDefaultColor() != -1) {
+        if (twitter.getCardBackgroundColor().getDefaultColor() != Color.WHITE) {
             twitterstatus = "yes";
         }
     }
