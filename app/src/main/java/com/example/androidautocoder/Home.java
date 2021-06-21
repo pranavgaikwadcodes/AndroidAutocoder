@@ -19,6 +19,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,6 +42,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+
 
         goToSelectedCategory();
 
@@ -98,6 +109,35 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
 
     }
 
+    private void checkIfApkCreated() {
+
+
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
+
+        String _Username = userDetails.get(SessionManager.KEY_USERNAME);
+
+        //Firebase reference
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_app_data").child(_Username).child("appFeaturesInfo");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                if (!snapshot.exists()){
+                    Toast.makeText(getApplicationContext(), "You haven't created any app yet !", Toast.LENGTH_SHORT).show();
+                }else {
+
+                    Intent myapp = new Intent(getApplicationContext(), MyCreatedApps.class);
+                    startActivity(myapp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -123,8 +163,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.click_home:
                 break;
             case R.id.my_apps:
-                Intent myapp = new Intent(this, MyCreatedApps.class);
-                startActivity(myapp);
+                checkIfApkCreated();
                 break;
             case R.id.click_orderApp:
                 Intent intent = new Intent(this, Order_app.class);

@@ -330,7 +330,9 @@
                     android:background="@drawable/upserprofile_btn"
                     android:fontFamily="@font/segoe_ui_bold"
                     android:text="UPDATE"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:onClick="update"
+                    android:layout_marginBottom="50dp"/>
 
             </LinearLayout>
 

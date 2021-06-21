@@ -27,6 +27,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Register_page extends AppCompatActivity {
 
+    Boolean emailIsValid,phoneIsValid,userIsValid;
+
+
     private View decorView;
 
     TextView l;
@@ -229,7 +232,7 @@ public class Register_page extends AppCompatActivity {
 
             }
         });
-        return true;
+        return false;
     }
 
     private Boolean existEmail() {
@@ -247,6 +250,8 @@ public class Register_page extends AppCompatActivity {
                     regEmail.setError("Email already registered");
                     return;
                 }
+                    return;
+
             }
 
             @Override
@@ -254,7 +259,7 @@ public class Register_page extends AppCompatActivity {
 
             }
         });
-        return true;
+        return false;
     }
 
     private Boolean existPhoneNumber() {
@@ -271,6 +276,7 @@ public class Register_page extends AppCompatActivity {
                     regPhone.setError("Phone Number already registered");
                     return;
                 }
+                    return;
 
             }
 
@@ -279,7 +285,7 @@ public class Register_page extends AppCompatActivity {
 
             }
         });
-        return true;
+        return false;
     }
 
     //register
@@ -291,41 +297,146 @@ public class Register_page extends AppCompatActivity {
             rootNode = FirebaseDatabase.getInstance();
             reference = rootNode.getReference("users");
 
-            if (!valConfirmpassword() | !valPassword() | !valPhone() | !valUsername() | !valEmail() | !existEmail() | existPhoneNumber() | existUsername()) {
-                return;
+            if (!valConfirmpassword() | !valPassword() | !valPhone() | !valUsername() | !valEmail()) {
+               return;
             }
 
-            String email = regEmail.getEditText().getText().toString();
-            String username = regUsername.getEditText().getText().toString();
-            String ph = regPhone.getEditText().getText().toString();
-            String pass = regPassword.getEditText().getText().toString();
-            String con_pass = regConfirmPassword.getEditText().getText().toString();
-            String adminUsername = "";
-            String adminPassword = "";
-
-
-            UserHelperClass helperClass = new UserHelperClass(email, username, ph, pass, con_pass);
-            reference.child(username).setValue(helperClass);
-            Toast reg = Toast.makeText(getApplicationContext(), "Registered Successfully !", Toast.LENGTH_LONG);
-            reg.show();
-
-
-            //Session
-            SessionManager sessionManager = new SessionManager(Register_page.this);
-            sessionManager.createLoginSession(username,email,ph,pass);
 
 
 
-            Intent registered = new Intent(Register_page.this, Splash_Screen.class);
+//            String email = regEmail.getEditText().getText().toString();
+//            String username = regUsername.getEditText().getText().toString();
+//            String ph = regPhone.getEditText().getText().toString();
+//            String pass = regPassword.getEditText().getText().toString();
+//            String con_pass = regConfirmPassword.getEditText().getText().toString();
+//            String adminUsername = "";
+//            String adminPassword = "";
+//
+//
+//            UserHelperClass helperClass = new UserHelperClass(email, username, ph, pass, con_pass);
+//            reference.child(username).setValue(helperClass);
+//            Toast reg = Toast.makeText(getApplicationContext(), "Registered Successfully !", Toast.LENGTH_LONG);
+//            reg.show();
+//
+//
+//            //Session
+//            SessionManager sessionManager = new SessionManager(Register_page.this);
+//            sessionManager.createLoginSession(username, email, ph, pass);
+//
+//
+//            Intent registered = new Intent(Register_page.this, Splash_Screen.class);
+//
+//            registered.putExtra("username", username);
+//            registered.putExtra("email", email);
+//            registered.putExtra("phone", ph);
+//            registered.putExtra("password", pass);
+//
+//
+//            startActivity(registered);
+//            finish();
 
-            registered.putExtra("username", username);
-            registered.putExtra("email", email);
-            registered.putExtra("phone", ph);
-            registered.putExtra("password", pass);
 
 
-            startActivity(registered);
-            finish();
+
+
+
+
+
+
+//            val unique
+            String userEnteredUsername = regUsername.getEditText().getText().toString().trim();
+
+            //Firebase reference
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+            Query checkPhoneNumber = reference.orderByChild("username").equalTo(userEnteredUsername);
+            checkPhoneNumber.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                    if (snapshot.exists()) {
+                        regUsername.setError("Username already registered");
+                    }else {
+                        String userEnteredEmail = regEmail.getEditText().getText().toString().trim();
+
+                        //Firebase reference
+                        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+                        Query checkEmail = reference.orderByChild("email").equalTo(userEnteredEmail);
+
+                        checkEmail.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (snapshot.exists()) {
+                                    regEmail.setError("Email already registered");
+                                }else {
+
+                                    String userEnteredPhoneNumber = regPhone.getEditText().getText().toString().trim();
+
+                                    //Firebase reference
+                                    DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+                                    Query checkPhoneNumber = reference.orderByChild("phone").equalTo(userEnteredPhoneNumber);
+                                    checkPhoneNumber.addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                                            if (snapshot.exists()) {
+                                                regPhone.setError("Phone Number already registered");
+                                            }else {
+                                                String email = regEmail.getEditText().getText().toString();
+                                                String username = regUsername.getEditText().getText().toString();
+                                                String ph = regPhone.getEditText().getText().toString();
+                                                String pass = regPassword.getEditText().getText().toString();
+                                                String con_pass = regConfirmPassword.getEditText().getText().toString();
+                                                String adminUsername = "";
+                                                String adminPassword = "";
+
+
+                                                UserHelperClass helperClass = new UserHelperClass(email, username, ph, pass, con_pass);
+                                                reference.child(username).setValue(helperClass);
+                                                Toast reg = Toast.makeText(getApplicationContext(), "Registered Successfully !", Toast.LENGTH_LONG);
+                                                reg.show();
+
+
+                                                //Session
+                                                SessionManager sessionManager = new SessionManager(Register_page.this);
+                                                sessionManager.createLoginSession(username, email, ph, pass);
+
+
+                                                Intent registered = new Intent(Register_page.this, Splash_Screen.class);
+
+                                                registered.putExtra("username", username);
+                                                registered.putExtra("email", email);
+                                                registered.putExtra("phone", ph);
+                                                registered.putExtra("password", pass);
+
+
+                                                startActivity(registered);
+                                                finish();
+
+                                            }
+                                        }
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                            }
+                        });
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+
+
+
+
 
 
         }

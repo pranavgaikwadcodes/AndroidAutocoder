@@ -186,7 +186,8 @@
                     android:fontFamily="@font/segoe_ui"
                     android:text="NEXT"
                     android:textColor="@color/white"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:layout_marginBottom="100dp"/>
 
 
             </LinearLayout>

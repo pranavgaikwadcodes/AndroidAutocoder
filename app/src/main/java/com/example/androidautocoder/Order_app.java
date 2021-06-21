@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,6 +18,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashMap;
 
 public class Order_app extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -118,6 +128,36 @@ public class Order_app extends AppCompatActivity implements NavigationView.OnNav
         }
     }
 
+
+    private void checkIfApkCreated() {
+
+
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
+
+        String _Username = userDetails.get(SessionManager.KEY_USERNAME);
+
+        //Firebase reference
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_app_data").child(_Username).child("appFeaturesInfo");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                if (!snapshot.exists()){
+                    Toast.makeText(getApplicationContext(), "You haven't created any app yet !", Toast.LENGTH_SHORT).show();
+                }else {
+
+                    Intent myapp = new Intent(getApplicationContext(), MyCreatedApps.class);
+                    startActivity(myapp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -126,8 +166,7 @@ public class Order_app extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(intent);
                 break;
             case R.id.my_apps:
-                Intent myapp = new Intent(this, MyCreatedApps.class);
-                startActivity(myapp);
+                checkIfApkCreated();
                 break;
             case R.id.click_orderApp:
                 break;

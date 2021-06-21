@@ -8,6 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -19,8 +20,17 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.androidautocoder.Databases.SessionManager;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
+
+import static com.example.androidautocoder.Databases.SessionManager.KEY_EMAIL;
 
 public class userProfile extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -33,11 +43,22 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
     TextView TextUsername;
     private Button Logout;
 
+    //    global data to hold info
+    String _EMAIL, _USERNAME, _CONTACT, _PASSWORD;
+
+    DatabaseReference reference;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
+
+        String _Username = userDetails.get(SessionManager.KEY_USERNAME);
+
+        reference = FirebaseDatabase.getInstance().getReference("users").child(_Username);
 
         Logout = (Button) findViewById(R.id.nav_logoutbtn);
         Logout.setOnClickListener(new View.OnClickListener() {
@@ -109,16 +130,21 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
         SessionManager sessionManager = new SessionManager(this);
         HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
 
-        String _Email = userDetails.get(SessionManager.KEY_EMAIL);
+        String _Email = userDetails.get(KEY_EMAIL);
         String _Phone = userDetails.get(SessionManager.KEY_PHONE);
         String _Username = userDetails.get(SessionManager.KEY_USERNAME);
         String _Password = userDetails.get(SessionManager.KEY_PASSWORD);
 
-        Email.getEditText().setText(_Email);
-        Username.getEditText().setText(_Username);
-        Contact.getEditText().setText(_Phone);
-        Password.getEditText().setText(_Password);
-        TextUsername.setText(_Username);
+        _EMAIL = _Email;
+        _USERNAME = _Username;
+        _CONTACT = _Phone;
+        _PASSWORD = _Password;
+
+        Email.getEditText().setText(_EMAIL);
+        Username.getEditText().setText(_USERNAME);
+        Contact.getEditText().setText(_CONTACT);
+        Password.getEditText().setText(_PASSWORD);
+        TextUsername.setText(_USERNAME);
 
     }
 
@@ -142,6 +168,35 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
     }
     //    end hide bar
 
+
+    private void checkIfApkCreated() {
+
+        SessionManager sessionManager = new SessionManager(getApplicationContext());
+        HashMap<String, String> userDetails = sessionManager.getUserDetailsFromSession();
+
+        String _Username = userDetails.get(SessionManager.KEY_USERNAME);
+
+        //Firebase reference
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("user_app_data").child(_Username).child("appFeaturesInfo");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
+                if (!snapshot.exists()) {
+                    Toast.makeText(getApplicationContext(), "You haven't created any app yet !", Toast.LENGTH_SHORT).show();
+                } else {
+
+                    Intent myapp = new Intent(getApplicationContext(), MyCreatedApps.class);
+                    startActivity(myapp);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+            }
+        });
+    }
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -150,8 +205,7 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent3);
                 break;
             case R.id.my_apps:
-                Intent myapp = new Intent(this, MyCreatedApps.class);
-                startActivity(myapp);
+                checkIfApkCreated();
                 break;
             case R.id.click_orderApp:
                 Intent intent = new Intent(this, Order_app.class);
@@ -203,4 +257,46 @@ public class userProfile extends AppCompatActivity implements NavigationView.OnN
         finish();
     }
 
+    public void update(View view) {
+
+        if (isEmailChanged() || isContactChanged() || isPasswordChanged()) {
+            Toast.makeText(this, "Data Was Updated.", Toast.LENGTH_SHORT).show();
+        }else if (isUsernameChanged()){
+            Toast.makeText(this, "Changing Username Is Not Allowed.", Toast.LENGTH_SHORT).show();
+        }else {
+            Toast.makeText(this, "Data Was Not Changed.", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    private boolean isPasswordChanged() {
+        if (!_PASSWORD.equals(Password.getEditText().getText().toString())) {
+            reference.child("password").setValue(Password.getEditText().getText().toString());
+            reference.child("cpassword").setValue(Password.getEditText().getText().toString());
+            _PASSWORD=Password.getEditText().getText().toString();
+            return true;
+        }else {return false;}
+    }
+
+    private boolean isContactChanged() {
+        if (!_CONTACT.equals(Contact.getEditText().getText().toString())) {
+            reference.child("phone").setValue(Contact.getEditText().getText().toString());
+            _CONTACT=Contact.getEditText().getText().toString();
+            return true;
+        }else {return false;}
+    }
+
+    private boolean isUsernameChanged() {
+        if (!_USERNAME.equals(Username.getEditText().getText().toString())) {
+            return true;
+        }else {return false;}
+    }
+
+    private boolean isEmailChanged() {
+        if (!_EMAIL.equals(Email.getEditText().getText().toString())) {
+            reference.child("email").setValue(Email.getEditText().getText().toString());
+            _EMAIL=Email.getEditText().getText().toString();
+            return true;
+        }else {return false;}
+    }
 }
