@@ -17,7 +17,7 @@ public class usersAppDownloadPage extends AppCompatActivity {
     private View decorView;
 
     private Button DownloadApp;
-    private String DownloadUrl ="https://firebasestorage.googleapis.com/v0/b/androidcoder-486b3.appspot.com/o/demoApp%2FDemoApk-0.1.apk?alt=media&token=24968ace-9583-4bea-b21f-524ff5aa9f36";
+    private String DownloadUrl ="https://firebasestorage.googleapis.com/v0/b/androidcoder-486b3.appspot.com/o/demoApp%2FDemoApk-0.1.apk?alt=media&token=76e90414-d729-4a14-8d55-c954e93d9f3d";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
